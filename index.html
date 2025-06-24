@@ -87,23 +87,26 @@
             </div>
         );
 
-        const MangaInfo = ({ mangaData }) => (
-            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-6">
-                <div className="flex flex-col md:flex-row items-start">
-                    <img 
-                        src={mangaData.cover} 
-                        alt={`Capa de ${mangaData.title}`} 
-                        className="w-48 h-auto object-cover rounded-md shadow-md mb-4 md:mb-0 md:mr-6"
-                        onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/192x268/e2e8f0/4a5568?text=Capa+Indisponível'; }}
-                    />
-                    <div className="flex-1 text-gray-900 dark:text-white">
-                        <h1 className="text-3xl font-bold mb-1">{mangaData.title}</h1>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 mb-2">por {mangaData.author}</p>
-                        <p className="text-sm leading-relaxed whitespace-pre-wrap">{mangaData.description}</p>
+        const MangaInfo = ({ mangaData }) => {
+            const proxiedCover = `https://corsproxy.io/?${encodeURIComponent(mangaData.cover)}`;
+            return (
+                <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-6">
+                    <div className="flex flex-col md:flex-row items-start">
+                        <img 
+                            src={proxiedCover} 
+                            alt={`Capa de ${mangaData.title}`} 
+                            className="w-48 h-auto object-cover rounded-md shadow-md mb-4 md:mb-0 md:mr-6"
+                            onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/192x268/e2e8f0/4a5568?text=Capa+Indisponível'; }}
+                        />
+                        <div className="flex-1 text-gray-900 dark:text-white">
+                            <h1 className="text-3xl font-bold mb-1">{mangaData.title}</h1>
+                            <p className="text-lg text-gray-600 dark:text-gray-400 mb-2">por {mangaData.author}</p>
+                            <p className="text-sm leading-relaxed whitespace-pre-wrap">{mangaData.description}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        };
         
         const ChapterList = ({ mangaData, onSelectChapter, selectedChapterKey, chapterKeys }) => (
             <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
@@ -222,7 +225,7 @@
                     {readingMode === 'paginated' ? (
                         <>
                             <div className="mt-4 flex justify-center bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">
-                                 <img src={chapter.pages[page]} alt={`Página ${page + 1}`} className="max-w-full h-auto rounded-lg shadow-lg bg-white" onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/800x1200/e0e0e0/757575?text=Erro+ao+carregar+página`; }} />
+                                 <img src={`https://corsproxy.io/?${encodeURIComponent(chapter.pages[page])}`} alt={`Página ${page + 1}`} className="max-w-full h-auto rounded-lg shadow-lg bg-white" onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/800x1200/e0e0e0/757575?text=Erro+ao+carregar+página`; }} />
                             </div>
                             <div className="mt-4 flex justify-center items-center space-x-4">
                                 <button onClick={goToPrevPage} disabled={page === 0} className="px-6 py-2 rounded-md bg-blue-500 text-white disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center"><ChevronLeftIcon /> Anterior</button>
@@ -234,7 +237,7 @@
                             <div className="mt-4 space-y-2">
                                 {chapter.pages.map((pageSrc, index) => (
                                     <div key={index} className="flex justify-center bg-gray-200 dark:bg-gray-700 p-1 rounded-lg">
-                                        <img src={pageSrc} alt={`Página ${index + 1}`} className="max-w-full h-auto rounded-md shadow-lg bg-white" onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/800x1200/e0e0e0/757575?text=Erro+ao+carregar+página`; }} />
+                                        <img src={`https://corsproxy.io/?${encodeURIComponent(pageSrc)}`} alt={`Página ${index + 1}`} className="max-w-full h-auto rounded-md shadow-lg bg-white" onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/800x1200/e0e0e0/757575?text=Erro+ao+carregar+página`; }} />
                                     </div>
                                 ))}
                             </div>
