@@ -105,24 +105,27 @@
             </div>
         );
         
-        const ChapterList = ({ mangaData, onSelectChapter, selectedChapterKey }) => (
+        const ChapterList = ({ mangaData, onSelectChapter, selectedChapterKey, chapterKeys }) => (
             <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Capítulos</h2>
                 <ul className="space-y-2 max-h-96 overflow-y-auto pr-2">
-                    {Object.entries(mangaData.chapters).map(([key, chapter]) => (
-                        <li key={key}>
-                            <button
-                                onClick={() => onSelectChapter(key)}
-                                className={`w-full text-left p-3 rounded-md transition-colors duration-200 ${
-                                    selectedChapterKey === key 
-                                        ? 'bg-blue-500 text-white font-bold' 
-                                        : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                                }`}
-                            >
-                                Capítulo {key}: {chapter.title}
-                            </button>
-                        </li>
-                    ))}
+                    {chapterKeys.map(key => {
+                        const chapter = mangaData.chapters[key];
+                        return (
+                            <li key={key}>
+                                <button
+                                    onClick={() => onSelectChapter(key)}
+                                    className={`w-full text-left p-3 rounded-md transition-colors duration-200 ${
+                                        selectedChapterKey === key 
+                                            ? 'bg-blue-500 text-white font-bold' 
+                                            : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                                    }`}
+                                >
+                                    Capítulo {key}: {chapter.title}
+                                </button>
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
         );
@@ -255,7 +258,7 @@
         };
 
         function App() {
-            const [url, setUrl] = useState('https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_-_A_Ascensao_de_Urek_Mazzino.json');
+            const [url, setUrl] = useState('https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_2_%E2%80%93_O_Retorno_do_Pr%C3%ADncipe.json');
             const [mangaData, setMangaData] = useState(null);
             const [selectedChapterKey, setSelectedChapterKey] = useState(null);
             const [currentPage, setCurrentPage] = useState(0);
@@ -263,7 +266,11 @@
             const [loading, setLoading] = useState(false);
             const [error, setError] = useState('');
             
-            const chapterKeys = useMemo(() => mangaData ? Object.keys(mangaData.chapters) : [], [mangaData]);
+            const chapterKeys = useMemo(() => {
+                if (!mangaData) return [];
+                // CORREÇÃO: Ordena as chaves dos capítulos numericamente
+                return Object.keys(mangaData.chapters).sort((a, b) => Number(a) - Number(b));
+            }, [mangaData]);
 
             const fetchMangaData = async () => {
                 if (!url) {
@@ -369,6 +376,7 @@
                                         mangaData={mangaData} 
                                         onSelectChapter={handleSelectChapter}
                                         selectedChapterKey={selectedChapterKey}
+                                        chapterKeys={chapterKeys}
                                     />
                                 </div>
                             </div>
