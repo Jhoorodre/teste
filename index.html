@@ -1,342 +1,377 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Mangá com IA</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega o React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Carrega o Babel para transpilar JSX no navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="root"></div>
 
-// --- Ícones SVG para a UI ---
-const BookOpenIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v11.494m0 0a7.5 7.5 0 007.5-7.5H4.5a7.5 7.5 0 007.5 7.5z" />
-  </svg>
-);
+    <script type="text/babel">
+        // O código da sua aplicação React vai aqui.
+        // Assegure-se de que o React e o ReactDOM estão disponíveis (carregados nos scripts acima).
+        const { useState, useEffect } = React;
 
-const LinkIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0m-4.244 4.244a2 2 0 010 2.828l3 3a2 2 0 012.828-2.828l-3-3a2 2 0 010-2.828zM12.586 11.414a2 2 0 10-2.828-2.828l-3 3a2 2 0 102.828 2.828l3-3z" clipRule="evenodd" />
-    </svg>
-);
+        // --- Ícones SVG para a UI ---
+        const BookOpenIcon = () => (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v11.494m0 0a7.5 7.5 0 007.5-7.5H4.5a7.5 7.5 0 007.5 7.5z" />
+          </svg>
+        );
 
+        const LinkIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0m-4.244 4.244a2 2 0 010 2.828l3 3a2 2 0 012.828-2.828l-3-3a2 2 0 010-2.828zM12.586 11.414a2 2 0 10-2.828-2.828l-3 3a2 2 0 102.828 2.828l3-3z" clipRule="evenodd" />
+            </svg>
+        );
 
-const ChevronLeftIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-    </svg>
-);
+        const ChevronLeftIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        );
 
-const ChevronRightIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-);
+        const ChevronRightIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        );
 
-// --- Componentes da UI ---
-
-/**
- * Componente Spinner para indicar carregamento
- */
-const Spinner = () => (
-    <div className="flex justify-center items-center p-8">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
-    </div>
-);
-
-/**
- * Componente para exibir uma mensagem de erro
- * @param {{message: string}} props
- */
-const ErrorMessage = ({ message }) => (
-    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative my-4" role="alert">
-        <strong className="font-bold">Erro: </strong>
-        <span className="block sm:inline">{message}</span>
-    </div>
-);
-
-/**
- * Exibe os detalhes do mangá, como título, autor e descrição.
- * @param {{mangaData: object}} props
- */
-const MangaInfo = ({ mangaData }) => (
-    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-6">
-        <div className="flex flex-col md:flex-row items-start">
-            <img 
-                src={mangaData.cover} 
-                alt={`Capa de ${mangaData.title}`} 
-                className="w-48 h-auto object-cover rounded-md shadow-md mb-4 md:mb-0 md:mr-6"
-                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/192x268/e2e8f0/4a5568?text=Capa+Indisponível'; }}
-            />
-            <div className="flex-1">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{mangaData.title}</h1>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-2">por {mangaData.author}</p>
-                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{mangaData.description}</p>
-            </div>
-        </div>
-    </div>
-);
-
-/**
- * Exibe a lista de capítulos disponíveis.
- * @param {{chapters: object, onSelectChapter: Function, selectedChapterKey: string}} props
- */
-const ChapterList = ({ chapters, onSelectChapter, selectedChapterKey }) => (
-    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Capítulos</h2>
-        <ul className="space-y-2 max-h-96 overflow-y-auto pr-2">
-            {Object.entries(chapters).map(([key, chapter]) => (
-                <li key={key}>
-                    <button
-                        onClick={() => onSelectChapter(key)}
-                        className={`w-full text-left p-3 rounded-md transition-colors duration-200 ${
-                            selectedChapterKey === key 
-                                ? 'bg-blue-500 text-white font-bold' 
-                                : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                        }`}
-                    >
-                        Capítulo {key}: {chapter.title}
-                    </button>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
-
-
-/**
- * O visualizador principal que exibe a página do mangá e a navegação.
- * @param {{chapter: object, page: number, setPage: Function, onBack: Function}} props
- */
-const MangaViewer = ({ chapter, page, setPage, onBack }) => {
-    // GUARDA DE SEGURANÇA: Previne crashes se 'chapter' ou 'chapter.pages' não existirem ou forem inválidos.
-    if (!chapter || !Array.isArray(chapter.pages) || chapter.pages.length === 0) {
-        return (
-            <div className="w-full mx-auto mt-6 p-8 text-center bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold text-red-600 dark:text-red-500">Erro ao Carregar Capítulo</h3>
-                <p className="text-gray-600 dark:text-gray-400 mt-2">
-                    Os dados para este capítulo parecem estar em falta ou corrompidos. Por favor, tente outro capítulo.
-                </p>
-                <button
-                    onClick={onBack}
-                    className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition"
-                >
-                    Voltar para a Lista
-                </button>
+        const Spinner = () => (
+            <div className="flex justify-center items-center p-8">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
             </div>
         );
-    }
 
-    const totalPages = chapter.pages.length;
-    
-    // Garante que a página atual não está fora dos limites
-    if (page >= totalPages || page < 0) {
-        setPage(0);
-        return <Spinner />; 
-    }
-
-    const goToNextPage = () => {
-        if (page < totalPages - 1) {
-            setPage(page + 1);
-        }
-    };
-
-    const goToPrevPage = () => {
-        if (page > 0) {
-            setPage(page - 1);
-        }
-    };
-    
-    // Suporte para navegação com as teclas de seta
-    React.useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.key === 'ArrowRight') {
-                goToNextPage();
-            } else if (e.key === 'ArrowLeft') {
-                goToPrevPage();
-            }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [page, totalPages]);
-
-
-    return (
-        <div className="w-full mx-auto mt-6">
-            <div className="sticky top-0 bg-gray-100 dark:bg-gray-900/80 backdrop-blur-sm p-3 z-10 rounded-lg shadow-md flex justify-between items-center flex-wrap gap-2">
-                <button
-                    onClick={onBack}
-                    className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition"
-                >
-                    Voltar para os Capítulos
-                </button>
-                <div className="text-center flex-grow">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Capítulo {chapter.number}: {chapter.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Página {page + 1} de {totalPages}</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                     <button
-                        onClick={goToPrevPage}
-                        disabled={page === 0}
-                        className="p-2 rounded-full bg-blue-500 text-white disabled:bg-gray-400 disabled:cursor-not-allowed hover:bg-blue-600 transition"
-                    >
-                        <ChevronLeftIcon />
-                    </button>
-                    <button
-                        onClick={goToNextPage}
-                        disabled={page === totalPages - 1}
-                        className="p-2 rounded-full bg-blue-500 text-white disabled:bg-gray-400 disabled:cursor-not-allowed hover:bg-blue-600 transition"
-                    >
-                       <ChevronRightIcon />
-                    </button>
+        const Modal = ({ title, content, onClose }) => (
+            <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+                    <header className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
+                        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-3xl leading-none">&times;</button>
+                    </header>
+                    <main className="p-6 overflow-y-auto">
+                        {content}
+                    </main>
                 </div>
             </div>
+        );
 
-            <div className="mt-4 flex justify-center bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">
-                 <img
-                    key={`${chapter.number}-${page}`} // Força o remount para exibir o spinner de carregamento da imagem
-                    src={chapter.pages[page]}
-                    alt={`Página ${page + 1}`}
-                    className="max-w-full h-auto rounded-lg shadow-lg bg-white"
-                    onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/800x1200/e0e0e0/757575?text=Erro+ao+carregar+página`; }}
-                />
+        const ErrorMessage = ({ message }) => (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative my-4" role="alert">
+                <strong className="font-bold">Erro: </strong>
+                <span className="block sm:inline">{message}</span>
             </div>
-             <div className="mt-4 flex justify-center items-center space-x-4">
-                <button
-                    onClick={goToPrevPage}
-                    disabled={page === 0}
-                    className="px-6 py-2 rounded-md bg-blue-500 text-white disabled:bg-gray-400 disabled:cursor-not-allowed hover:bg-blue-600 transition flex items-center"
-                >
-                    <ChevronLeftIcon /> Anterior
-                </button>
-                <button
-                    onClick={goToNextPage}
-                    disabled={page === totalPages - 1}
-                    className="px-6 py-2 rounded-md bg-blue-500 text-white disabled:bg-gray-400 disabled:cursor-not-allowed hover:bg-blue-600 transition flex items-center"
-                >
-                    Próxima <ChevronRightIcon />
-                </button>
-            </div>
-        </div>
-    );
-};
+        );
 
-// --- Componente Principal da Aplicação ---
-function App() {
-    // --- Estados ---
-    const [url, setUrl] = React.useState('https://gist.githubusercontent.com/requiemic/1c8fa0b080582d33d74c839712795c6c/raw/one-punch-man.json');
-    const [mangaData, setMangaData] = React.useState(null);
-    const [selectedChapterKey, setSelectedChapterKey] = React.useState(null);
-    const [currentPage, setCurrentPage] = React.useState(0);
-    const [loading, setLoading] = React.useState(false);
-    const [error, setError] = React.useState('');
-    
-    // --- Lógica de busca de dados ---
-    const fetchMangaData = async () => {
-        if (!url) {
-            setError('Por favor, insira uma URL.');
-            return;
-        }
-        setLoading(true);
-        setError('');
-        setMangaData(null);
-        setSelectedChapterKey(null);
-        
-        // Usando um proxy CORS para evitar problemas de cross-origin
-        const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
-
-        try {
-            const response = await fetch(proxyUrl);
-            if (!response.ok) {
-                throw new Error(`Falha ao buscar dados: ${response.status} ${response.statusText}`);
-            }
-            const data = await response.json();
-            
-            // Reestrutura os capítulos para um acesso mais fácil, adicionando o número do capítulo
-            const chaptersWithNumbers = Object.entries(data.chapters).reduce((acc, [key, value]) => {
-                acc[key] = { ...value, number: key };
-                return acc;
-            }, {});
-
-            setMangaData({ ...data, chapters: chaptersWithNumbers });
-
-        } catch (e) {
-            setError(e.message || 'Ocorreu um erro desconhecido. Verifique a URL e a estrutura do JSON.');
-            console.error(e);
-        } finally {
-            setLoading(false);
-        }
-    };
-    
-    // --- Manipuladores de Eventos ---
-    const handleSelectChapter = (chapterKey) => {
-        setSelectedChapterKey(chapterKey);
-        setCurrentPage(0); // Reseta para a primeira página ao selecionar um novo capítulo
-    };
-    
-    const handleBackToChapters = () => {
-        setSelectedChapterKey(null);
-    };
-
-    // --- Renderização ---
-    return (
-        <div className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans text-gray-800 dark:text-gray-200 p-4 sm:p-6 lg:p-8 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto">
-                {/* Cabeçalho e campo de URL */}
-                <header className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-                    <div className="flex items-center mb-4">
-                        <BookOpenIcon />
-                        <h1 className="text-2xl font-bold">Leitor de Mangá (Réplica Cubari)</h1>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Cole a URL de um JSON compatível com Cubari (ex: um Gist do GitHub) abaixo para carregar um mangá.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-stretch gap-2">
-                       <div className="relative flex-grow">
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                                <LinkIcon />
-                            </span>
-                             <input
-                                type="text"
-                                value={url}
-                                onChange={(e) => setUrl(e.target.value)}
-                                placeholder="https://..."
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
-                            />
-                       </div>
+        const MangaInfo = ({ mangaData, onGenerateSummary }) => (
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-6">
+                <div className="flex flex-col md:flex-row items-start">
+                    <img 
+                        src={mangaData.cover} 
+                        alt={`Capa de ${mangaData.title}`} 
+                        className="w-48 h-auto object-cover rounded-md shadow-md mb-4 md:mb-0 md:mr-6"
+                        onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/192x268/e2e8f0/4a5568?text=Capa+Indisponível'; }}
+                    />
+                    <div className="flex-1">
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{mangaData.title}</h1>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 mb-2">por {mangaData.author}</p>
+                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{mangaData.description}</p>
                         <button
-                            onClick={fetchMangaData}
-                            disabled={loading}
-                            className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:bg-blue-300 disabled:cursor-wait transition-all duration-200"
+                            onClick={() => onGenerateSummary(mangaData)}
+                            className="mt-4 inline-flex items-center px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 transition-colors"
                         >
-                            {loading ? 'Carregando...' : 'Carregar Mangá'}
+                           ✨ Gerar Resumo com IA
                         </button>
                     </div>
-                </header>
+                </div>
+            </div>
+        );
+        
+        const ChapterList = ({ mangaData, onSelectChapter, selectedChapterKey, onAnalyzeChapter }) => (
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Capítulos</h2>
+                <ul className="space-y-2 max-h-96 overflow-y-auto pr-2">
+                    {Object.entries(mangaData.chapters).map(([key, chapter]) => (
+                        <li key={key} className="flex items-center space-x-2">
+                            <button
+                                onClick={() => onSelectChapter(key)}
+                                className={`w-full text-left p-3 rounded-md transition-colors duration-200 ${
+                                    selectedChapterKey === key 
+                                        ? 'bg-blue-500 text-white font-bold' 
+                                        : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                                }`}
+                            >
+                                Capítulo {key}: {chapter.title}
+                            </button>
+                            <button 
+                                onClick={() => onAnalyzeChapter(chapter, mangaData.title)}
+                                className="p-2 rounded-full text-yellow-500 hover:bg-yellow-100 dark:hover:bg-gray-600 transition-colors"
+                                title="Analisar Capítulo com IA"
+                            >
+                               ✨
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+        
+        const MangaViewer = ({ chapter, page, setPage, onBack }) => {
+            if (!chapter || !Array.isArray(chapter.pages) || chapter.pages.length === 0) {
+                return (
+                    <div className="w-full mx-auto mt-6 p-8 text-center bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                        <h3 className="text-xl font-bold text-red-600 dark:text-red-500">Erro ao Carregar Capítulo</h3>
+                        <p className="text-gray-600 dark:text-gray-400 mt-2">Os dados para este capítulo parecem estar em falta ou corrompidos.</p>
+                        <button onClick={onBack} className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition">Voltar para a Lista</button>
+                    </div>
+                );
+            }
 
-                {/* Exibição de Erro ou Conteúdo */}
-                {loading && <Spinner />}
-                {error && <ErrorMessage message={error} />}
+            const totalPages = chapter.pages.length;
+            
+            if (page >= totalPages || page < 0) {
+                setPage(0);
+                return <Spinner />; 
+            }
 
-                {mangaData && !selectedChapterKey && (
-                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div className="lg:col-span-2">
-                             <MangaInfo mangaData={mangaData} />
+            const goToNextPage = () => { if (page < totalPages - 1) setPage(page + 1); };
+            const goToPrevPage = () => { if (page > 0) setPage(page - 1); };
+            
+            useEffect(() => {
+                const handleKeyDown = (e) => {
+                    if (e.key === 'ArrowRight') goToNextPage();
+                    else if (e.key === 'ArrowLeft') goToPrevPage();
+                };
+                window.addEventListener('keydown', handleKeyDown);
+                return () => window.removeEventListener('keydown', handleKeyDown);
+            }, [page, totalPages]);
+
+            return (
+                <div className="w-full mx-auto mt-6">
+                    <div className="sticky top-0 bg-gray-100 dark:bg-gray-900/80 backdrop-blur-sm p-3 z-10 rounded-lg shadow-md flex justify-between items-center flex-wrap gap-2">
+                        <button onClick={onBack} className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Voltar</button>
+                        <div className="text-center flex-grow">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Capítulo {chapter.number}: {chapter.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-400">Página {page + 1} de {totalPages}</p>
                         </div>
-                        <div>
-                             <ChapterList 
-                                chapters={mangaData.chapters} 
-                                onSelectChapter={handleSelectChapter}
-                                selectedChapterKey={selectedChapterKey}
-                            />
+                        <div className="flex items-center space-x-2">
+                             <button onClick={goToPrevPage} disabled={page === 0} className="p-2 rounded-full bg-blue-500 text-white disabled:bg-gray-400 transition"><ChevronLeftIcon /></button>
+                            <button onClick={goToNextPage} disabled={page === totalPages - 1} className="p-2 rounded-full bg-blue-500 text-white disabled:bg-gray-400 transition"><ChevronRightIcon /></button>
                         </div>
                     </div>
-                )}
-                
-                {mangaData && selectedChapterKey && (
-                    <MangaViewer 
-                        chapter={mangaData.chapters[selectedChapterKey]}
-                        page={currentPage}
-                        setPage={setCurrentPage}
-                        onBack={handleBackToChapters}
-                    />
-                )}
-            </div>
-        </div>
-    );
-}
+                    <div className="mt-4 flex justify-center bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">
+                         <img src={chapter.pages[page]} alt={`Página ${page + 1}`} className="max-w-full h-auto rounded-lg shadow-lg bg-white" onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/800x1200/e0e0e0/757575?text=Erro+ao+carregar+página`; }} />
+                    </div>
+                    <div className="mt-4 flex justify-center items-center space-x-4">
+                        <button onClick={goToPrevPage} disabled={page === 0} className="px-6 py-2 rounded-md bg-blue-500 text-white disabled:bg-gray-400 flex items-center"><ChevronLeftIcon /> Anterior</button>
+                        <button onClick={goToNextPage} disabled={page === totalPages - 1} className="px-6 py-2 rounded-md bg-blue-500 text-white disabled:bg-gray-400 flex items-center">Próxima <ChevronRightIcon /></button>
+                    </div>
+                </div>
+            );
+        };
 
-export default App;
+        function App() {
+            const [url, setUrl] = useState('https://gist.githubusercontent.com/requiemic/1c8fa0b080582d33d74c839712795c6c/raw/one-punch-man.json');
+            const [mangaData, setMangaData] = useState(null);
+            const [selectedChapterKey, setSelectedChapterKey] = useState(null);
+            const [currentPage, setCurrentPage] = useState(0);
+            const [loading, setLoading] = useState(false);
+            const [error, setError] = useState('');
+            const [isModalOpen, setIsModalOpen] = useState(false);
+            const [modalContent, setModalContent] = useState(null);
+            const [modalTitle, setModalTitle] = useState('');
+            const [isAiLoading, setIsAiLoading] = useState(false);
+            
+            const callGeminiApi = async (prompt) => {
+                setIsAiLoading(true);
+                setModalContent(null);
+                setError('');
+                try {
+                    // ===============================================================
+                    // IMPORTANTE: Insira a sua chave de API do Gemini aqui
+                    // ===============================================================
+                    const apiKey = "SUA_CHAVE_API_AQUI"; 
+                    // ===============================================================
+
+                    if (apiKey === "SUA_CHAVE_API_AQUI") {
+                        throw new Error("A chave de API do Gemini não foi configurada. Obtenha uma no Google AI Studio e adicione ao código.");
+                    }
+
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                         const errorBody = await response.text();
+                         throw new Error(`API Error: ${response.status} - ${errorBody}`);
+                    }
+                    const result = await response.json();
+                    if (result.candidates?.[0]?.content?.parts?.[0]?.text) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("A resposta da IA estava vazia ou em formato inesperado.");
+                    }
+                } catch (e) {
+                    console.error("Erro ao chamar a API Gemini:", e);
+                    setError(`Falha ao gerar conteúdo com IA: ${e.message}`);
+                    return null;
+                } finally {
+                    setIsAiLoading(false);
+                }
+            };
+
+            const handleGenerateSummary = async (manga) => {
+                setModalTitle(`Resumo de ${manga.title}`);
+                setIsModalOpen(true);
+                const prompt = `Gere um resumo alternativo e cativante para o mangá "${manga.title}". A descrição atual é: "${manga.description}". Use um tom que desperte a curiosidade de um novo leitor. Formate em parágrafos.`;
+                const summary = await callGeminiApi(prompt);
+                if (summary) {
+                    setModalContent(<p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">{summary}</p>);
+                } else {
+                    setIsModalOpen(false);
+                }
+            };
+
+            const handleAnalyzeChapter = async (chapter, mangaTitle) => {
+                 setModalTitle(`Análise do Capítulo ${chapter.number}: ${chapter.title}`);
+                 setIsModalOpen(true);
+                 const prompt = `Você é um fã de mangá analisando o Capítulo ${chapter.number} de "${mangaTitle}", intitulado "${chapter.title}". Crie o seguinte, em português:
+        1.  **Título Criativo:** Um título alternativo e impactante para este capítulo.
+        2.  **Temas Principais:** Um resumo curto (2-3 frases) dos temas ou eventos prováveis deste capítulo, com base no título.
+        3.  **Tópico para Discussão:** Uma pergunta aberta para iniciar uma discussão entre fãs sobre o capítulo.
+
+        Formate a sua resposta claramente com os cabeçalhos em negrito (ex: **Título Criativo**).`;
+                const analysis = await callGeminiApi(prompt);
+                if(analysis) {
+                     const formattedAnalysis = (
+                        <div className="space-y-4">
+                           {analysis.split('\n').map((line, index) => {
+                               if (line.startsWith('**') && line.endsWith('**')) {
+                                   return <strong key={index} className="text-purple-500 dark:text-purple-400 block mt-2">{line.replace(/\*\*/g, '')}</strong>;
+                               }
+                               if (line.trim()){
+                                   return <p key={index} className="text-gray-700 dark:text-gray-300">{line}</p>;
+                               }
+                               return null;
+                           })}
+                        </div>
+                    );
+                    setModalContent(formattedAnalysis);
+                } else {
+                    setIsModalOpen(false);
+                }
+            }
+            
+            const fetchMangaData = async () => {
+                if (!url) {
+                    setError('Por favor, insira uma URL.');
+                    return;
+                }
+                setLoading(true);
+                setError('');
+                setMangaData(null);
+                setSelectedChapterKey(null);
+                
+                const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
+
+                try {
+                    const response = await fetch(proxyUrl);
+                    if (!response.ok) throw new Error(`Falha ao buscar dados: ${response.status}`);
+                    const data = await response.json();
+                    
+                    const chaptersWithNumbers = Object.entries(data.chapters).reduce((acc, [key, value]) => {
+                        acc[key] = { ...value, number: key };
+                        return acc;
+                    }, {});
+                    setMangaData({ ...data, chapters: chaptersWithNumbers });
+                } catch (e) {
+                    setError(e.message || 'Ocorreu um erro desconhecido.');
+                } finally {
+                    setLoading(false);
+                }
+            };
+            
+            const handleSelectChapter = (chapterKey) => {
+                setSelectedChapterKey(chapterKey);
+                setCurrentPage(0);
+            };
+            
+            const handleBackToChapters = () => setSelectedChapterKey(null);
+            
+            return (
+                <div className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans text-gray-800 dark:text-gray-200 p-4 sm:p-6 lg:p-8">
+                    {isModalOpen && (
+                        <Modal title={modalTitle} onClose={() => setIsModalOpen(false)} content={
+                            isAiLoading ? <Spinner /> : modalContent
+                        }/>
+                    )}
+                    <div className="max-w-7xl mx-auto">
+                        <header className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+                            <div className="flex items-center mb-4">
+                                <BookOpenIcon />
+                                <h1 className="text-2xl font-bold">Leitor de Mangá com IA</h1>
+                            </div>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4">
+                                Cole a URL de um JSON compatível com Cubari para carregar. Experimente as funcionalidades de IA!
+                            </p>
+                            <div className="flex flex-col sm:flex-row items-stretch gap-2">
+                               <div className="relative flex-grow">
+                                     <span className="absolute inset-y-0 left-0 flex items-center pl-3"><LinkIcon /></span>
+                                     <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://..." className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"/>
+                               </div>
+                                <button onClick={fetchMangaData} disabled={loading} className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 disabled:bg-blue-300">
+                                    {loading ? 'Carregando...' : 'Carregar Mangá'}
+                                </button>
+                            </div>
+                        </header>
+
+                        {error && <ErrorMessage message={error} />}
+                        {loading && <Spinner />}
+                        
+                        {mangaData && !selectedChapterKey && (
+                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                <div className="lg:col-span-2">
+                                     <MangaInfo mangaData={mangaData} onGenerateSummary={handleGenerateSummary} />
+                                </div>
+                                <div>
+                                     <ChapterList 
+                                        mangaData={mangaData} 
+                                        onSelectChapter={handleSelectChapter}
+                                        selectedChapterKey={selectedChapterKey}
+                                        onAnalyzeChapter={handleAnalyzeChapter}
+                                    />
+                                </div>
+                            </div>
+                        )}
+                        
+                        {mangaData && selectedChapterKey && (
+                            <MangaViewer 
+                                chapter={mangaData.chapters[selectedChapterKey]}
+                                page={currentPage}
+                                setPage={setCurrentPage}
+                                onBack={handleBackToChapters}
+                            />
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
+    </script>
+</body>
+</html>
