@@ -1,0 +1,25 @@
+{
+  "hubTitle": "TOG Brasil",
+  "mangas": [
+    {
+      "title": "Tower of God: Parte 1 – O Irregular",
+      "cover": "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_1_O_Irregular.json"
+    },
+    {
+      "title": "Tower of God: Parte 2 – O Retorno do Príncipe",
+      "cover": "https://static.wikia.nocookie.net/towerofgod/images/1/1b/ToG-Book09.jpg/revision/latest?cb=20220707194613",
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_2_%E2%80%93_O_Retorno_do_Pr%C3%ADncipe.json"
+    },
+    {
+      "title": "Tower of God: A Ascensão de Urek Mazzino",
+      "cover": "https://cdn.myanimelist.net/images/manga/2/324137l.jpg",
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_-_A_Ascensao_de_Urek_Mazzino.json"
+    },
+    {
+      "title": "Tower of God: Parte 3 – A Batalha das Grandes Famílias",
+      "cover": "https://files.catbox.moe/hzj0y9.jpg",
+      "url": "https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/refs/heads/main/Tower_of_God_Parte_3_%E2%80%93_A_Batalha_entre_os_L%C3%ADderes_das_Fam%C3%ADlias.json"
+    }
+  ]
+}
