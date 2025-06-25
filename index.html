@@ -18,10 +18,14 @@
     <style>
         /* Define as variáveis de cor e gradientes para o tema */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
-            --gold-gradient: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+            --color-primary: #341111;
+            --color-background: #141414;
+            --color-accent: #e6e6e6;
+            
+            --primary-gradient: linear-gradient(135deg, #4a2525 0%, #341111 100%);
+            --secondary-gradient: linear-gradient(135deg, #2a2a2a 0%, #141414 100%);
+            --dark-gradient: linear-gradient(135deg, #1f1f1f 0%, #141414 100%);
+            --accent-gradient: linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%);
         }
 
         /* Estilos base para o corpo da página */
@@ -29,6 +33,7 @@
             height: 100%; 
             font-family: 'Inter', sans-serif;
             background: var(--dark-gradient);
+            color: var(--color-accent);
             overflow-x: hidden;
         }
 
@@ -54,9 +59,9 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120, 219, 226, 0.2) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(230, 230, 230, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(230, 230, 230, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(230, 230, 230, 0.03) 0%, transparent 50%);
             animation: backgroundShift 15s ease-in-out infinite;
         }
 
@@ -77,7 +82,7 @@
         }
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(230, 230, 230, 0.1);
             border-radius: 50%;
             animation: float 20s linear infinite;
         }
@@ -89,18 +94,16 @@
             100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
         }
 
-        /* Efeito de vidro (Glassmorphism) */
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Efeito de painel sólido (Glassmorphism removido) */
+        .panel-solid {
+            background-color: rgba(30, 20, 20, 0.7); /* Cor de fundo mais opaca */
+            border: 1px solid rgba(230, 230, 230, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .panel-dark {
+            background-color: rgba(20, 20, 20, 0.8); /* Cor de fundo mais opaca */
+            border: 1px solid rgba(230, 230, 230, 0.1);
         }
 
         /* Efeitos para os cartões dos mangás */
@@ -118,7 +121,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(230, 230, 230, 0.2), transparent);
             transition: left 0.5s;
             z-index: 2;
         }
@@ -147,7 +150,7 @@
 
         /* Animações para o cabeçalho */
         .header-title {
-            background: var(--gold-gradient);
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -155,8 +158,8 @@
         }
 
         @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)); }
-            to { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); }
+            from { filter: drop-shadow(0 0 10px rgba(230, 230, 230, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(230, 230, 230, 0.8)); }
         }
 
         /* Animações de entrada (scroll) */
@@ -184,7 +187,7 @@
             transform: translate(-50%, -50%);
             width: 80%; height: 80%;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(230, 230, 230, 0.3);
             animation: orbInner 1.5s ease-in-out infinite reverse;
         }
 
@@ -212,7 +215,7 @@
 
         /* Scrollbar personalizada */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-track { background: rgba(230, 230, 230, 0.1); border-radius: 10px; }
         ::-webkit-scrollbar-thumb { background: var(--primary-gradient); border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--secondary-gradient); }
 
@@ -224,7 +227,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
+        const { useState, useEffect, useRef, useMemo } = React;
 
         // Função para criar as partículas flutuantes
         const createParticles = () => {
@@ -250,7 +253,8 @@
         const ViewColumnsIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" /></svg>);
         const DocumentIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>);
         const ArrowUpIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>);
-        const SparklesIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>);
+        const SortAscendingIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>);
+        const SortDescendingIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" /></svg>);
         
         // --- Componentes da UI ---
 
@@ -265,20 +269,20 @@
         // Componente para Mensagens de Erro
         const ErrorMessage = ({ message, onRetry }) => (
             <div className="min-h-screen flex items-center justify-center p-4">
-                <div className="glass-dark border border-red-500/30 text-red-300 px-6 py-4 rounded-2xl relative fade-in text-center" role="alert">
+                <div className="panel-dark border border-red-500/30 text-red-300 px-6 py-4 rounded-2xl relative fade-in text-center" role="alert">
                     <div className="flex items-center justify-center mb-4">
                         <svg className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         <strong className="font-bold">Erro: </strong>
                     </div>
                     <span>{message}</span>
-                    {onRetry && <button onClick={onRetry} className="mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-xl">Tentar Novamente</button>}
+                    {onRetry && <button onClick={onRetry} className="mt-4 bg-red-800/50 text-white px-6 py-2 rounded-xl">Tentar Novamente</button>}
                 </div>
             </div>
         );
         
         // Componente para carregar o Hub
         const HubLoader = ({ onLoadHub, loading }) => {
-            const [url, setUrl] = useState("https://cdn.jsdelivr.net/gh/Jhoorodre/DEMO@master/hub.json");
+            const [url, setUrl] = useState("https://raw.githubusercontent.com/Jhoorodre/TOG-Brasil/main/hub_tog.json");
 
             const handleSubmit = (e) => {
                 e.preventDefault();
@@ -289,12 +293,12 @@
 
             return (
                 <div className="min-h-screen flex items-center justify-center p-4">
-                    <div className="glass rounded-3xl p-8 w-full max-w-2xl text-center fade-in">
+                    <div className="panel-solid rounded-3xl p-8 w-full max-w-2xl text-center fade-in">
                         <h1 className="text-4xl font-black mb-6 header-title orbitron">Carregar Hub</h1>
-                        <p className="text-gray-300 mb-8">Insira o URL RAW que deseja carregar.</p>
+                        <p className="text-gray-300 mb-8">Insira o URL Json que deseja carregar.</p>
                         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
-                            <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white" placeholder="https://exemplo.com/seu_hub.json" required />
-                            <button type="submit" disabled={loading} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 text-white" placeholder="https://exemplo.com/seu_hub.json" required />
+                            <button type="submit" disabled={loading} className="bg-gradient-to-r from-red-800 to-red-600 text-white px-8 py-3 rounded-xl hover:from-red-700 hover:to-red-500 transition-all duration-300 flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed">
                                 {loading ? 'A carregar...' : 'Carregar'}
                             </button>
                         </form>
@@ -302,20 +306,32 @@
                 </div>
             );
         };
+        
+        const SocialLinks = ({ social }) => (
+            <div className="mt-6">
+                <h4 className="font-bold text-lg text-red-300 mb-3 text-left">Junte-se à nossa comunidade:</h4>
+                <div className="flex flex-wrap gap-4">
+                    {social.platforms.map((platform) => (
+                        <a key={platform.id} href={platform.url} target="_blank" rel="noopener noreferrer" className="panel-dark px-4 py-2 rounded-lg text-white hover:bg-white/10 transition-colors flex-grow text-center">{platform.name}</a>
+                    ))}
+                </div>
+            </div>
+        );
+
 
         // Cabeçalho do Hub
-        const HubHeader = ({ icon, description }) => (
-            <div className="glass rounded-3xl p-8 mb-16 fade-in">
+        const HubHeader = ({ hub, social }) => (
+            <div className="panel-solid rounded-3xl p-8 mb-16 fade-in">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                     <div className="relative flex-shrink-0">
                         <div className="neon-border rounded-full">
-                            <img src={`https://corsproxy.io/?${encodeURIComponent(icon)}`} alt="Ícone do Grupo" className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-2xl bg-gray-800" onError={(e) => { e.target.style.display = 'none'; }} />
+                            <img src={`https://corsproxy.io/?${encodeURIComponent(hub.icon.url)}`} alt={hub.icon.alt} className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-2xl bg-gray-800" onError={(e) => { e.target.style.display = 'none'; }} />
                         </div>
-                        <div className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 p-2 rounded-full shadow-lg"><SparklesIcon /></div>
                     </div>
                     <div className="flex-1 text-center lg:text-left">
                         <div className="prose prose-invert max-w-none prose-p:text-gray-300 prose-p:leading-relaxed">
-                            <p className="whitespace-pre-wrap">{description}</p>
+                            <p className="whitespace-pre-wrap">{hub.description}</p>
+                            {social && <SocialLinks social={social} />}
                         </div>
                     </div>
                 </div>
@@ -323,20 +339,20 @@
         );
         
         // Grelha de Mangás
-        const MangaGrid = ({ mangas, onSelectManga }) => (
+        const MangaGrid = ({ series, onSelectManga }) => (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {mangas.map((manga, index) => (
-                    <div key={manga.url} onClick={() => onSelectManga(manga.url)} className="manga-card glass rounded-2xl overflow-hidden cursor-pointer group fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                {series.map((manga, index) => (
+                    <div key={manga.id} onClick={() => onSelectManga(manga)} className="manga-card panel-solid rounded-2xl overflow-hidden cursor-pointer group fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
                         <div className="relative aspect-[3/4] overflow-hidden">
-                            <img src={`https://corsproxy.io/?${encodeURIComponent(manga.cover)}`} alt={`Capa de ${manga.title}`} className="w-full h-full object-cover" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/400x600/1f2937/4b5563?text=Capa'; }}/>
+                            <img src={`https://corsproxy.io/?${encodeURIComponent(manga.cover.url)}`} alt={manga.cover.alt} className="w-full h-full object-cover" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/400x600/1f2937/4b5563?text=Capa'; }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div className="bg-white/20 backdrop-blur-sm rounded-full p-4"><BookOpenIcon /></div>
                             </div>
                         </div>
                         <div className="p-6">
-                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">{manga.title}</h3>
-                            <div className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-400 group-hover:to-red-600 group-hover:bg-clip-text transition-all duration-300">{manga.title}</h3>
+                            <div className="h-1 bg-gradient-to-r from-red-800 to-red-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                         </div>
                     </div>
                 ))}
@@ -345,13 +361,21 @@
 
         // Informações do Mangá Selecionado
         const MangaInfo = ({ mangaData, onBackToHub }) => (
-            <div className="glass rounded-3xl p-8 mb-8 fade-in">
-                <button onClick={onBackToHub} className="mb-8 glass-dark px-6 py-3 rounded-xl text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-3"><ChevronLeftIcon /> <span className="font-medium">Voltar ao Hub</span></button>
+            <div className="panel-solid rounded-3xl p-8 mb-8 fade-in">
+                <button onClick={onBackToHub} className="mb-8 panel-dark px-6 py-3 rounded-xl text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-3"><ChevronLeftIcon /> <span className="font-medium">Voltar à Lista</span></button>
                 <div className="flex flex-col lg:flex-row items-start gap-8">
-                    <div className="relative flex-shrink-0"><div className="neon-border rounded-2xl"><img src={`https://corsproxy.io/?${encodeURIComponent(mangaData.cover)}`} alt={`Capa de ${mangaData.title}`} className="w-64 h-auto object-cover rounded-2xl shadow-2xl bg-gray-800" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/256x358/1f2937/4b5563?text=Capa'; }}/></div></div>
+                    <div className="relative flex-shrink-0"><div className="neon-border rounded-2xl"><img src={`https://corsproxy.io/?${encodeURIComponent(mangaData.cover.url)}`} alt={mangaData.cover.alt} className="w-64 h-auto object-cover rounded-2xl shadow-2xl bg-gray-800" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/256x358/1f2937/4b5563?text=Capa'; }}/></div></div>
                     <div className="flex-1 text-white">
                         <h1 className="text-5xl font-bold mb-4 header-title orbitron">{mangaData.title}</h1>
-                        <p className="text-2xl text-purple-300 mb-6 font-medium">por {mangaData.author}</p>
+                        <p className="text-2xl text-red-300 mb-2 font-medium">por {mangaData.author.name}</p>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                            <span className="panel-dark px-3 py-1 rounded-md text-sm font-semibold capitalize">{mangaData.status.translation}</span>
+                            <span className="panel-dark px-3 py-1 rounded-md text-sm font-semibold capitalize">{mangaData.type}</span>
+                            <span className="panel-dark px-3 py-1 rounded-md text-sm font-semibold">{mangaData.publication.year}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                            {mangaData.genres.map(g => <span key={g} className="bg-red-900/50 text-red-300 px-3 py-1 rounded-full text-xs font-medium capitalize">{g}</span>)}
+                        </div>
                         <div className="prose prose-invert prose-lg max-w-none"><p className="text-gray-200 leading-relaxed whitespace-pre-wrap">{mangaData.description}</p></div>
                     </div>
                 </div>
@@ -359,27 +383,43 @@
         );
 
         // Lista de Capítulos
-        const ChapterList = ({ mangaData, onSelectChapter, selectedChapterKey, chapterKeys }) => (
-            <div className="glass rounded-3xl p-8 fade-in">
-                <h2 className="text-3xl font-bold mb-6 text-white orbitron">Capítulos</h2>
-                <div className="space-y-3 max-h-[32rem] overflow-y-auto pr-2">
-                    {chapterKeys.map((key, index) => {
-                        const chapter = mangaData.chapters[key];
-                        const isActive = selectedChapterKey === key;
-                        return (
-                            <div key={key} className={`chapter-item ${isActive ? 'active' : ''}`} style={{ animationDelay: `${index * 0.05}s` }}>
-                                <button onClick={() => onSelectChapter(key)} className={`w-full text-left p-4 rounded-xl transition-all duration-300 text-white ${isActive ? 'bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg transform scale-105' : 'glass-dark hover:bg-white/10 hover:transform hover:scale-102'}`}>
-                                    <div className="flex items-center justify-between">
-                                        <span className={`font-medium ${isActive ? 'font-bold' : ''}`}>Cap. {key}: {chapter.title}</span>
-                                        {isActive && (<div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>)}
-                                    </div>
-                                </button>
-                            </div>
-                        );
-                    })}
+        const ChapterList = ({ mangaData, onSelectChapter, sortOrder, setSortOrder }) => {
+            const chapterKeys = useMemo(() => {
+                if (!mangaData?.chapters) return [];
+                const keys = Object.keys(mangaData.chapters);
+                return keys.sort((a, b) => {
+                    const numA = parseFloat(a.replace(/[^0-9.]/g, '')) || 0;
+                    const numB = parseFloat(b.replace(/[^0-9.]/g, '')) || 0;
+                    return sortOrder === 'asc' ? numA - numB : numB - numA;
+                });
+            }, [mangaData, sortOrder]);
+
+            return (
+                <div className="panel-solid rounded-3xl p-8 fade-in">
+                    <div className="flex justify-between items-center mb-6">
+                        <h2 className="text-3xl font-bold text-white orbitron">Capítulos</h2>
+                        <button onClick={() => setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc')} className="panel-dark px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-white/10 transition-all flex items-center gap-2">
+                            {sortOrder === 'asc' ? <SortAscendingIcon/> : <SortDescendingIcon />}
+                            <span>{sortOrder === 'asc' ? 'Mais Antigos' : 'Mais Recentes'}</span>
+                        </button>
+                    </div>
+                    <div className="space-y-3 max-h-[32rem] overflow-y-auto pr-2">
+                        {chapterKeys.map((key, index) => {
+                            const chapter = mangaData.chapters[key];
+                            return (
+                                <div key={key} className="chapter-item" style={{ animationDelay: `${index * 0.05}s` }}>
+                                    <button onClick={() => onSelectChapter(key)} className={`w-full text-left p-4 rounded-xl transition-all duration-300 text-white panel-dark hover:bg-white/10 hover:transform hover:scale-102`}>
+                                        <div className="flex items-center justify-between">
+                                            <span className="font-medium">Cap. {key}: {chapter.title}</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        };
 
         // Leitor de Mangá
         const MangaViewer = ({ chapter, page, setPage, onBack, readingMode, setReadingMode, onNextChapter, onPrevChapter, isFirstChapter, isLastChapter }) => {
@@ -403,7 +443,7 @@
             const pages = activeGroup ? chapter.groups[activeGroup] : [];
             const totalPages = pages.length;
 
-            if (!chapter || !activeGroup || pages.length === 0) { /* ... (código de erro) ... */ }
+            if (!chapter || !activeGroup || pages.length === 0) { return <ErrorMessage message="Capítulo sem páginas ou com dados inválidos." onRetry={onBack} />; }
             if (readingMode === 'paginated' && (page >= totalPages || page < 0)) { setPage(0); return <Spinner />; }
 
             const goToNextPage = () => { if (page < totalPages - 1) setPage(p => p + 1); };
@@ -422,32 +462,33 @@
 
             return (
                 <div className="w-full mx-auto mt-8">
-                    <div className="sticky top-6 glass rounded-2xl p-6 z-20 mb-8 fade-in">
+                    {/* Painel de controlo estático (não mais "sticky") */}
+                    <div className="panel-solid rounded-2xl p-6 mb-8 fade-in">
                         <div className="flex justify-between items-center w-full flex-wrap gap-4">
-                            <button onClick={onBack} className="glass-dark px-6 py-3 rounded-xl text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2"><ChevronLeftIcon /><span className="hidden sm:inline">Voltar</span></button>
+                            <button onClick={onBack} className="panel-dark px-6 py-3 rounded-xl text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2"><ChevronLeftIcon /><span className="hidden sm:inline">Voltar</span></button>
                             <div className="text-center flex-grow text-white">
                                 <h3 className="text-xl md:text-2xl font-bold orbitron mb-1">{chapter.title}</h3>
-                                {readingMode === 'paginated' && (<p className="text-purple-300">Página {page + 1} de {totalPages}</p>)}
+                                {readingMode === 'paginated' && (<p className="text-red-300">Página {page + 1} de {totalPages}</p>)}
                             </div>
-                            <button onClick={() => setReadingMode(readingMode === 'paginated' ? 'scrolling' : 'paginated')} className="glass-dark px-6 py-3 rounded-xl text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+                            <button onClick={() => setReadingMode(readingMode === 'paginated' ? 'scrolling' : 'paginated')} className="panel-dark px-6 py-3 rounded-xl text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
                                 {readingMode === 'paginated' ? <ViewColumnsIcon /> : <DocumentIcon />}<span className="hidden sm:inline">{readingMode === 'paginated' ? 'Scroll' : 'Página'}</span>
                             </button>
                         </div>
-                        {Object.keys(chapter.groups || {}).length > 1 && (<div className="mt-4 flex flex-wrap gap-2">{Object.keys(chapter.groups).map((groupKey) => (<button key={groupKey} onClick={() => setActiveGroup(groupKey)} className={`px-4 py-2 rounded-lg transition-all duration-300 ${activeGroup === groupKey ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'glass-dark text-gray-300 hover:bg-white/10'}`}>{groupKey}</button>))}</div>)}
-                        <div className="mt-4 flex justify-between items-center"><button onClick={onPrevChapter} disabled={isFirstChapter} className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 ${isFirstChapter ? 'glass-dark text-gray-500 cursor-not-allowed' : 'glass-dark text-white hover:bg-white/10'}`}><ChevronLeftIcon /><span className="hidden sm:inline">Cap. Anterior</span></button><button onClick={onNextChapter} disabled={isLastChapter} className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 ${isLastChapter ? 'glass-dark text-gray-500 cursor-not-allowed' : 'glass-dark text-white hover:bg-white/10'}`}><span className="hidden sm:inline">Próximo Cap.</span><ChevronRightIcon /></button></div>
+                        {Object.keys(chapter.groups || {}).length > 1 && (<div className="mt-4 flex flex-wrap gap-2">{Object.keys(chapter.groups).map((groupKey) => (<button key={groupKey} onClick={() => setActiveGroup(groupKey)} className={`px-4 py-2 rounded-lg transition-all duration-300 ${activeGroup === groupKey ? 'bg-gradient-to-r from-red-800 to-red-600 text-white' : 'panel-dark text-gray-300 hover:bg-white/10'}`}>{groupKey}</button>))}</div>)}
+                        <div className="mt-4 flex justify-between items-center"><button onClick={onPrevChapter} disabled={isFirstChapter} className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 ${isFirstChapter ? 'panel-dark text-gray-500 cursor-not-allowed' : 'panel-dark text-white hover:bg-white/10'}`}><ChevronLeftIcon /><span className="hidden sm:inline">Cap. Anterior</span></button><button onClick={onNextChapter} disabled={isLastChapter} className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 ${isLastChapter ? 'panel-dark text-gray-500 cursor-not-allowed' : 'panel-dark text-white hover:bg-white/10'}`}><span className="hidden sm:inline">Próximo Cap.</span><ChevronRightIcon /></button></div>
                     </div>
 
                     {readingMode === 'paginated' ? (
-                        <div className="glass rounded-3xl p-4 sm:p-8 fade-in">
+                        <div className="p-4 sm:p-8 fade-in">
                             <div className="flex justify-center mb-6"><img src={`https://corsproxy.io/?${encodeURIComponent(pages[page])}`} alt={`Página ${page + 1}`} className="max-w-full h-auto rounded-xl shadow-2xl" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/800x1200/1f2937/4b5563?text=Erro+ao+Carregar'; }}/></div>
-                            <div className="flex justify-between items-center"><button onClick={goToPrevPage} disabled={page === 0} className={`px-4 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300 flex items-center gap-3 ${page === 0 ? 'glass-dark text-gray-500 cursor-not-allowed' : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'}`}><ChevronLeftIcon /><span>Anterior</span></button><span className="text-white font-medium text-lg">{page + 1} / {totalPages}</span><button onClick={goToNextPage} disabled={page === totalPages - 1} className={`px-4 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300 flex items-center gap-3 ${page === totalPages - 1 ? 'glass-dark text-gray-500 cursor-not-allowed' : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'}`}><span>Próxima</span><ChevronRightIcon /></button></div>
+                            <div className="flex justify-between items-center"><button onClick={goToPrevPage} disabled={page === 0} className={`px-4 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300 flex items-center gap-3 ${page === 0 ? 'panel-dark text-gray-500 cursor-not-allowed' : 'bg-gradient-to-r from-red-800 to-red-600 text-white hover:from-red-700 hover:to-red-500'}`}><ChevronLeftIcon /><span>Anterior</span></button><span className="text-white font-medium text-lg">{page + 1} / {totalPages}</span><button onClick={goToNextPage} disabled={page === totalPages - 1} className={`px-4 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300 flex items-center gap-3 ${page === totalPages - 1 ? 'panel-dark text-gray-500 cursor-not-allowed' : 'bg-gradient-to-r from-red-800 to-red-600 text-white hover:from-red-700 hover:to-red-500'}`}><span>Próxima</span><ChevronRightIcon /></button></div>
                         </div>
                     ) : (
-                        <div className="glass rounded-3xl p-4 sm:p-8 fade-in">
+                        <div className="p-4 sm:p-8 fade-in">
                             <div className="space-y-4">{pages.map((pageUrl, index) => (<div key={index} className="flex justify-center"><img src={`https://corsproxy.io/?${encodeURIComponent(pageUrl)}`} alt={`Página ${index + 1}`} className="max-w-full h-auto rounded-xl shadow-lg" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/800x1200/1f2937/4b5563?text=Erro+ao+Carregar'; }}/></div>))}</div>
                         </div>
                     )}
-                    {showScrollTop && (<button onClick={scrollTop} className="fixed bottom-8 right-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 rounded-full shadow-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 z-30"><ArrowUpIcon /></button>)}
+                    {showScrollTop && (<button onClick={scrollTop} className="fixed bottom-8 right-8 bg-gradient-to-r from-red-800 to-red-600 text-white p-4 rounded-full shadow-2xl hover:from-red-700 hover:to-red-500 transition-all duration-300 z-30"><ArrowUpIcon /></button>)}
                 </div>
             );
         };
@@ -461,13 +502,15 @@
             const [readingMode, setReadingMode] = useState('paginated');
             const [loading, setLoading] = useState(false);
             const [error, setError] = useState(null);
+            const [sortOrder, setSortOrder] = useState('desc');
+
 
             // Função para carregar o hub a partir de um URL
             const loadHub = async (url) => {
                 try {
                     setLoading(true);
                     setError(null);
-                    const response = await fetch(url);
+                    const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
                     if (!response.ok) throw new Error(`Não foi possível carregar o hub (status: ${response.status})`);
                     const data = await response.json();
                     setHubData(data);
@@ -482,14 +525,20 @@
                 createParticles(); 
             }, []);
 
-            const selectManga = async (mangaUrl) => {
+            const selectManga = async (mangaObject) => {
                 try {
                     setLoading(true);
                     setError(null);
-                    const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(mangaUrl)}`);
-                    if (!response.ok) throw new Error(`Não foi possível carregar o mangá (status: ${response.status})`);
-                    const mangaData = await response.json();
-                    setSelectedMangaData(mangaData);
+                    const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(mangaObject.data.url)}`);
+                    if (!response.ok) throw new Error(`Não foi possível carregar os capítulos do mangá (status: ${response.status})`);
+                    const chaptersData = await response.json();
+                    
+                    const completeMangaData = {
+                        ...mangaObject, // Detalhes da série
+                        chapters: chaptersData.chapters // Lista de capítulos carregada
+                    };
+                    
+                    setSelectedMangaData(completeMangaData);
                     setSelectedChapterKey(null);
                     setCurrentPage(0);
                 } catch (err) {
@@ -511,7 +560,7 @@
                 setSelectedChapterKey(null);
                 setCurrentPage(0);
             };
-
+            
             const backToManga = () => {
                 setSelectedChapterKey(null);
                 setCurrentPage(0);
@@ -526,7 +575,18 @@
 
             const getChapterKeys = () => {
                 if (!selectedMangaData?.chapters) return [];
-                return Object.keys(selectedMangaData.chapters).sort((a, b) => (parseFloat(a) || 0) - (parseFloat(b) || 0));
+                const keys = Object.keys(selectedMangaData.chapters);
+                // Ordenação robusta que lida com números e texto
+                return keys.sort((a, b) => {
+                    const numA = parseFloat(a.match(/(\d+(\.\d+)?)/)?.[0]) || 0;
+                    const numB = parseFloat(b.match(/(\d+(\.\d+)?)/)?.[0]) || 0;
+                    
+                    if(numA !== numB) {
+                        return sortOrder === 'asc' ? numA - numB : numB - numA;
+                    }
+                    // Se os números forem iguais, ordena alfabeticamente
+                    return sortOrder === 'asc' ? a.localeCompare(b) : b.localeCompare(a);
+                });
             };
 
             const navigateChapter = (direction) => {
@@ -553,29 +613,34 @@
                         ) : !selectedMangaData ? (
                             <>
                                 <div className="text-center mb-16 fade-in">
-                                    <h1 className="text-5xl md:text-6xl font-black mb-6 header-title orbitron">{currentHubData.hubTitle}</h1>
-                                    <button onClick={resetApp} className="glass-dark px-4 py-2 rounded-lg text-sm text-purple-300 hover:bg-white/10 transition-all">Carregar outro Hub</button>
+                                    <h1 className="text-5xl md:text-6xl font-black mb-6 header-title orbitron">{currentHubData.hub.title}</h1>
+                                    <button onClick={resetApp} className="panel-dark px-4 py-2 rounded-lg text-sm text-red-300 hover:bg-white/10 transition-all">Carregar outro Hub</button>
                                 </div>
-                                <HubHeader icon={currentHubData.scanIcon} description={currentHubData.scanDescription} />
-                                <MangaGrid mangas={currentHubData.mangas} onSelectManga={selectManga} />
+                                <HubHeader hub={currentHubData.hub} social={currentHubData.social} />
+                                <MangaGrid series={currentHubData.series} onSelectManga={selectManga} />
                             </>
                         ) : !selectedChapterKey ? (
                             <>
                                 <MangaInfo mangaData={selectedMangaData} onBackToHub={backToHub} />
-                                <ChapterList mangaData={selectedMangaData} onSelectChapter={selectChapter} selectedChapterKey={selectedChapterKey} chapterKeys={chapterKeys}/>
+                                <ChapterList 
+                                    mangaData={selectedMangaData} 
+                                    onSelectChapter={selectChapter} 
+                                    sortOrder={sortOrder}
+                                    setSortOrder={setSortOrder}
+                                />
                             </>
                         ) : (
                             <MangaViewer 
                                 chapter={selectedMangaData.chapters[selectedChapterKey]} 
                                 page={currentPage} 
                                 setPage={setCurrentPage} 
-                                onBack={backToManga} 
+                                onBack={backToManga}
                                 readingMode={readingMode} 
                                 setReadingMode={setReadingMode}
                                 onNextChapter={() => navigateChapter('next')}
                                 onPrevChapter={() => navigateChapter('prev')}
                                 isFirstChapter={currentChapterIndex === 0}
-                                isLastChapter={currentChapterIndex === chapterKeys.length - 1}
+                                isLastChapter={chapterKeys.length > 0 && currentChapterIndex === chapterKeys.length - 1}
                             />
                         )}
                     </div>
