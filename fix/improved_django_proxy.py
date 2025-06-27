@@ -76,4 +76,3 @@ class GenericProxyView(APIView):
         except Exception as e:
             print(f"Unexpected error in proxy for {url}: {e}")
             return Response({"error": "Internal server error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
