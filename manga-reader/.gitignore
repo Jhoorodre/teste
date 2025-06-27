@@ -1,29 +1,14 @@
-# Python / Django
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-db.sqlite3
-/venv/
-.env
-
-# Frontend / Node
-/node_modules/
-/dist/
-.env
-.env.*
-!.env.example
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Editor / OS specific
+# Arquivos de configuração de IDE e SO
 .vscode/
 .idea/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Arquivos de log gerais
+*.log
+
+# Ambientes virtuais na raiz (se houver)
+/venv/
+/env/
+
+# Arquivos de banco de dados na raiz
+*.sqlite3
