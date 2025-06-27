@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .. # O contexto agora é a pasta pai (manga-reader)
+      dockerfile: ./docker/backend.Dockerfile
+    volumes:
+      - ./backend:/usr/src/app/backend
+    expose:
+      - 8000
+
+  frontend:
+    build:
+      context: .. # O contexto agora é a pasta pai (manga-reader)
+      dockerfile: ./docker/frontend.Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

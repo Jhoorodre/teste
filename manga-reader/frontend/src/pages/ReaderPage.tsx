@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { Series, Chapter } from '../types';
 import ProxiedImage from '../components/ProxiedImage';
+import { useReadingProgress } from '../hooks/useReadingProgress'; // Importar
 
 const ReaderPage: React.FC = () => {
     const { slug, chapter: chapterNumber } = useParams<{ slug: string; chapter: string }>();
     const location = useLocation();
-    // Directly get the series object from the route state
     const { series } = (location.state as { series: Series }) || {};
     
     const [currentPage, setCurrentPage] = useState(0);
+    const { updateProgress, getProgress } = useReadingProgress();
 
     if (!series || !chapterNumber) {
         return (
@@ -56,17 +57,54 @@ const ReaderPage: React.FC = () => {
     const pages = getPagesFromChapter(chapterData);
     // --- END OF FIX ---
 
-    const handlePrevPage = () => {
+    // --- CORE FEATURE ---
+    // Jump to the last read page when the component mounts
+    useEffect(() => {
+        if (series && chapterNumber) {
+            const savedProgress = getProgress(series.id);
+            if (savedProgress && savedProgress.lastChapter === chapterNumber) {
+                setCurrentPage(savedProgress.lastPage);
+            }
+        }
+    }, [series?.id, chapterNumber, getProgress]);
+
+    // Update progress whenever the page changes
+    useEffect(() => {
+        if (series && chapterNumber) {
+            updateProgress(series.id, chapterNumber, currentPage);
+        }
+    }, [currentPage, series?.id, chapterNumber, updateProgress]);
+    // --- END OF FEATURE ---
+
+    const handlePrevPage = useCallback(() => {
         if (currentPage > 0) {
             setCurrentPage(currentPage - 1);
         }
-    };
+    }, [currentPage]);
 
-    const handleNextPage = () => {
+    const handleNextPage = useCallback(() => {
         if (pages && currentPage < pages.length - 1) {
             setCurrentPage(currentPage + 1);
         }
-    };
+    }, [currentPage, pages]);
+
+    // --- CORE FEATURE ---
+    // Add keyboard navigation for changing pages
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') {
+                handlePrevPage();
+            } else if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') {
+                handleNextPage();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [handlePrevPage, handleNextPage]);
+    // --- END OF FEATURE ---
 
     return (
         <div className="container mx-auto p-4">
