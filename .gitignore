@@ -1,3 +1,16 @@
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary or local files
+/fix/
+
 cubari-proxy/
 cubarimoe/
 guyamoe/
