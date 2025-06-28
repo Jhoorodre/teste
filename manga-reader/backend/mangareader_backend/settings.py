@@ -2,6 +2,8 @@ from pathlib import Path
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+# Define o diretório onde os arquivos JSON de dados estão localizados
+DATA_DIR = BASE_DIR.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-your-secret-key')
@@ -188,7 +190,18 @@ logs_dir = BASE_DIR / 'logs'
 logs_dir.mkdir(exist_ok=True)
 
 # Custom proxy settings
-PROXY_ALLOWED_DOMAINS = os.environ.get('PROXY_ALLOWED_DOMAINS', '').split(',') if os.environ.get('PROXY_ALLOWED_DOMAINS') else []
+# --- FIX ---
+# Hardcode the allowed domains for now.
+# This can be moved to environment variables for production.
+PROXY_ALLOWED_DOMAINS = [
+    'raw.githubusercontent.com',
+    'cdn.jsdelivr.net',
+    'files.catbox.moe',
+    'static.wikia.nocookie.net',
+    'cdn.myanimelist.net',
+    'i.ibb.co',
+]
+# PROXY_ALLOWED_DOMAINS = os.environ.get('PROXY_ALLOWED_DOMAINS', '').split(',') if os.environ.get('PROXY_ALLOWED_DOMAINS') else []
 PROXY_MAX_FILE_SIZE = int(os.environ.get('PROXY_MAX_FILE_SIZE', 50 * 1024 * 1024))  # 50MB default
 
 # Security settings for production

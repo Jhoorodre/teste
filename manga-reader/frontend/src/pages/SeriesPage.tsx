@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { apiService } from '../services/apiService';
 import { Series, Chapter } from '../types';
 import ProxiedImage from '../components/ProxiedImage';
@@ -7,18 +7,18 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { useFavorites } from '../hooks/useFavorites';
 import { useReadingProgress } from '../hooks/useReadingProgress';
 import SeriesStats from '../components/SeriesStats';
+import { useNavigate } from 'react-router-dom';
 
 const SeriesPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const location = useLocation();
     const navigate = useNavigate();
     
-    const seriesSummary = location.state?.series as Series | undefined;
+    const { series: seriesSummary } = (location.state as { series: Series }) || {};
 
     const [seriesDetails, setSeriesDetails] = useState<any | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-
     const { addFavorite, removeFavorite, isFavorite } = useFavorites();
     const { getProgress } = useReadingProgress();
 
@@ -45,9 +45,6 @@ const SeriesPage: React.FC = () => {
         }
     }, [seriesDataUrl]);
 
-    // --- CORE FIX ---
-    // Handle the case where the user navigates directly to this page
-    // or the state hasn't arrived yet.
     if (!seriesSummary) {
         return (
             <div className="container mx-auto p-4 text-center">
@@ -56,13 +53,10 @@ const SeriesPage: React.FC = () => {
             </div>
         );
     }
-    // --- END OF FIX ---
 
-    // Display loading or error states
     if (loading) return <LoadingSpinner message="Carregando detalhes da série..." />;
     if (error) return <div className="text-center p-8 text-red-500">Error: {error}</div>;
 
-    // 4. Combine the summary and detailed data for rendering
     const finalSeriesData = { ...seriesSummary, ...seriesDetails };
     const chapterEntries = Object.entries(finalSeriesData.chapters || {});
     const isCurrentlyFavorite = isFavorite(finalSeriesData.id);

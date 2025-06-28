@@ -7,15 +7,19 @@ if (!API_BASE_URL || !HUB_JSON_URL) {
 }
 
 const fetchDataViaProxy = async (targetUrl: string) => {
+    if (!targetUrl) {
+        throw new Error("Target URL for proxy is undefined.");
+    }
     const encodedUrl = btoa(targetUrl);
     const proxyEndpoint = `${API_BASE_URL}/proxy/?url=${encodedUrl}`;
 
     try {
         const response = await fetch(proxyEndpoint);
         if (!response.ok) {
-            const errorData = await response.json().catch(() => ({ message: 'An unknown error occurred.' }));
-            throw new Error(errorData.message || `Request failed with status ${response.status}`);
+            const errorText = await response.text();
+            throw new Error(errorText || `Request failed with status ${response.status}`);
         }
+        // O proxy agora sempre retorna o conteúdo bruto, então tentamos analisar como JSON aqui.
         return response.json();
     } catch (error) {
         console.error(`Proxy call for ${targetUrl} failed:`, error);
@@ -25,15 +29,15 @@ const fetchDataViaProxy = async (targetUrl: string) => {
 
 export const apiService = {
     /**
-     * Fetches the main hub data from the URL specified in the .env file.
+     * Fetches the main hub data from the local backend endpoint.
      */
     getHubData: async () => {
         return fetchDataViaProxy(HUB_JSON_URL);
     },
 
     /**
-     * Fetches data for a specific series from a given URL.
-     * @param seriesUrl The full URL to the series JSON.
+     * Fetches data for a specific series from a local backend endpoint.
+     * @param seriesUrl The URL of the series JSON.
      */
     getSeriesData: async (seriesUrl: string) => {
         return fetchDataViaProxy(seriesUrl);
@@ -45,13 +49,9 @@ export const apiService = {
      * @returns The proxied image URL.
      */
     getImageProxyUrl: (imageUrl: string | undefined) => {
-        // Add validation to prevent undefined URLs
         if (!imageUrl || typeof imageUrl !== 'string' || imageUrl.trim() === '') {
-            console.warn('getImageProxyUrl called with invalid URL:', imageUrl);
-            // Return a placeholder image URL that doesn't need proxying
             return 'https://placehold.co/400x600/1f2937/4b5563?text=Invalid+URL';
         }
-
         try {
             const encodedUrl = btoa(imageUrl);
             return `${API_BASE_URL}/proxy/?url=${encodedUrl}`;
