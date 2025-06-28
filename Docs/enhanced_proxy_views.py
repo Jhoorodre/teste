@@ -263,4 +263,3 @@ class HealthCheckView(APIView):
             "service": "manga-reader-proxy",
             "cache_backend": str(cache.__class__.__name__)
         })
-
