@@ -18,16 +18,16 @@
     }
   },
   "hub": {
-    "id": "tog-brasil-hub",
-    "title": "Tower of God Brasil",
-    "subtitle": "Scanlation Oficial Brasileira",
-    "slug": "tower-of-god-brasil",
+    "id": "teste-brasil-hub",
+    "title": "Scan A",
+    "subtitle": "Scanlation teste",
+    "slug": "teste-of-scan-brasil",
     "icon": {
-      "url": "https://files.catbox.moe/y8t3n2.jpg",
+      "url": "https://files.catbox.moe/gq4kqy.png",
       "alt": "Tower of God Brasil Logo",
       "type": "image/jpeg"
     },
-    "description": "Bem-vindo ao Tower of God Brasil! Somos um grupo de fãs apaixonados, dedicados a trazer a épica jornada de Baam e seus companheiros para o público brasileiro com traduções de alta qualidade, feitas com muito cuidado e respeito pela obra original de S.I.U.\n\nNosso objetivo é compartilhar o amor por este universo incrível e garantir que mais pessoas possam escalar a Torre conosco. Todo o nosso trabalho é voluntário e sem fins lucrativos.",
+    "description": "teste",
     "disclaimer": "Lembre-se sempre de apoiar o autor! Se Tower of God for lançado oficialmente no Brasil, compre e incentive o trabalho de S.I.U."
   },
   "team": {
