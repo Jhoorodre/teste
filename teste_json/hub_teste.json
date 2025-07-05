@@ -1,0 +1,288 @@
+{
+  "schema": {
+    "version": "2.0",
+    "format": "application/json",
+    "encoding": "utf-8"
+  },
+  "meta": {
+    "version": "1.0.0-test",
+    "lastUpdated": "2025-07-05T02:15:00-03:00",
+    "language": "pt-BR",
+    "region": "BR",
+    "updateFrequency": "daily",
+    "nextUpdate": "2025-07-06T02:15:00-03:00",
+    "apiVersion": "v1-test",
+    "cacheControl": {
+      "maxAge": 600,
+      "staleWhileRevalidate": 86400
+    }
+  },
+  "hub": {
+    "id": "hub-de-teste",
+    "title": "Hub de Conteúdo para Testes",
+    "subtitle": "Uma coleção de dados para desenvolvimento",
+    "slug": "hub-de-teste",
+    "icon": {
+      "url": "https://files.catbox.moe/gq4kqy.png",
+      "alt": "Ícone do Hub de Teste",
+      "type": "image/png"
+    },
+    "description": "Este é um hub gerado para fins de teste, contendo uma estrutura de dados completa com informações de exemplo para popular uma interface de usuário durante o desenvolvimento.",
+    "disclaimer": "Nenhum dado aqui é real. Todos os direitos de imagens e links pertencem aos seus respectivos donos e são utilizados aqui apenas para demonstração.",
+    "team": {
+      "name": "Equipe de Teste",
+      "type": "desenvolvimento",
+      "status": "active",
+      "founded": "2025",
+      "members": {
+        "total": 5,
+        "translators": 2,
+        "editors": 1,
+        "typesetters": 1,
+        "quality_assurance": 1
+      },
+      "contact": "teste@exemplo.com"
+    },
+    "website": {
+      "primary": "https://exemplo.com",
+      "cdn": "https://cdn.jsdelivr.net/gh/Jhoorodre/teste/"
+    }
+  },
+  "social": [
+    {
+      "id": "discord-test",
+      "name": "Servidor de Teste",
+      "platform": "discord",
+      "url": "https://discord.gg/example",
+      "description": "Comunidade para desenvolvedores",
+      "primary": true,
+      "memberCount": "100+",
+      "features": ["discussions", "updates", "dev-logs"]
+    },
+    {
+      "id": "github-test",
+      "name": "Repositório do Projeto",
+      "platform": "github",
+      "url": "https://github.com/Jhoorodre/teste",
+      "description": "Código fonte e documentação",
+      "primary": false,
+      "memberCount": "50+",
+      "features": ["code", "issues", "documentation"]
+    }
+  ],
+  "series": [
+    {
+      "id": "teste-serie-1",
+      "title": "Série de Teste 1: A Origem",
+      "originalTitle": "Test Series 1: The Origin",
+      "slug": "serie-de-teste-1",
+      "author": { "name": "Autor Fictício 1", "originalName": "Fictional Author 1", "nationality": "BR" },
+      "publication": { "year": 2021, "publisher": "Editora Exemplo", "originalLanguage": "pt" },
+      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2025-01-10T10:00:00-03:00" },
+      "type": "quadrinho", "demographics": "jovem-adulto",
+      "genres": ["aventura", "teste", "dados"],
+      "tags": ["exemplo", "api", "json"],
+      "cover": { "url": "https://files.catbox.moe/gq4kqy.png", "alt": "Capa da Série de Teste 1", "type": "image/png" },
+      "description": "A primeira série de nossa coleção de testes, explorando os fundamentos da estrutura.",
+      "chapters": { "total": 20, "translated": 20, "available": 20, "status": "completed" },
+      "rating": { "community": 4.5, "totalVotes": 150 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste.json", "format": "json", "size": "150KB" },
+      "priority": 1, "featured": true, "special": false, "latest": false, "completionDate": "2025-01-10"
+    },
+    {
+      "id": "teste-serie-2",
+      "title": "Série de Teste 2: O Desafio",
+      "originalTitle": "Test Series 2: The Challenge",
+      "slug": "serie-de-teste-2",
+      "author": { "name": "Autor Fictício 2", "originalName": "Fictional Author 2", "nationality": "US" },
+      "publication": { "year": 2022, "publisher": "Editora Exemplo", "originalLanguage": "en" },
+      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-07-01T10:00:00-03:00" },
+      "type": "webcomic", "demographics": "todos",
+      "genres": ["comedia", "teste"],
+      "tags": ["mock", "placeholder", "desenvolvimento"],
+      "cover": { "url": "https://files.catbox.moe/o8wenn.png", "alt": "Capa da Série de Teste 2", "type": "image/png" },
+      "description": "Uma nova aventura com mais complexidade e desafios de dados.",
+      "chapters": { "total": "ongoing", "translated": 35, "available": 35, "status": "ongoing" },
+      "rating": { "community": 4.8, "totalVotes": 320 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste2.json", "format": "json", "size": "310KB" },
+      "priority": 2, "featured": true, "special": false, "latest": true, "updateSchedule": "weekly"
+    },
+    {
+      "id": "teste-serie-3",
+      "title": "Série de Teste 3: A Resposta",
+      "originalTitle": "Test Series 3: The Response",
+      "slug": "serie-de-teste-3",
+      "author": { "name": "Autor Fictício 3", "originalName": "Fictional Author 3", "nationality": "JP" },
+      "publication": { "year": 2023, "publisher": "Editora Exemplo", "originalLanguage": "ja" },
+      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2025-03-15T10:00:00-03:00" },
+      "type": "manga", "demographics": "shounen",
+      "genres": ["ação", "teste"],
+      "tags": ["endpoint", "http", "fetch"],
+      "cover": { "url": "https://files.catbox.moe/baaiy7.png", "alt": "Capa da Série de Teste 3", "type": "image/png" },
+      "description": "Nesta série, os protagonistas finalmente encontram a resposta que procuravam nos dados.",
+      "chapters": { "total": 50, "translated": 50, "available": 50, "status": "completed" },
+      "rating": { "community": 4.7, "totalVotes": 450 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste3.json", "format": "json", "size": "500KB" },
+      "priority": 3, "featured": true, "special": false, "latest": false, "completionDate": "2025-03-15"
+    },
+    {
+      "id": "teste-serie-4",
+      "title": "Série de Teste 4: Crônicas do Cache",
+      "originalTitle": "Test Series 4: Cache Chronicles",
+      "slug": "serie-de-teste-4",
+      "author": { "name": "Autor Fictício 1", "originalName": "Fictional Author 1", "nationality": "BR" },
+      "publication": { "year": 2024, "publisher": "Editora Exemplo", "originalLanguage": "pt" },
+      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-06-28T10:00:00-03:00" },
+      "type": "quadrinho", "demographics": "jovem-adulto",
+      "genres": ["ficção-científica", "teste"],
+      "tags": ["performance", "cdn", "otimização"],
+      "cover": { "url": "https://files.catbox.moe/wgltgx.png", "alt": "Capa da Série de Teste 4", "type": "image/png" },
+      "description": "Uma história sobre velocidade, eficiência e a busca pelos dados mais rápidos.",
+      "chapters": { "total": "ongoing", "translated": 15, "available": 15, "status": "ongoing" },
+      "rating": { "community": 4.6, "totalVotes": 180 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste4.json", "format": "json", "size": "220KB" },
+      "priority": 4, "featured": false, "special": false, "latest": true, "updateSchedule": "monthly"
+    },
+    {
+      "id": "teste-serie-5",
+      "title": "Série de Teste 5: O Legado",
+      "originalTitle": "Test Series 5: The Legacy",
+      "slug": "serie-de-teste-5",
+      "author": { "name": "Autor Fictício 4", "originalName": "Fictional Author 4", "nationality": "KR" },
+      "publication": { "year": 2020, "publisher": "Editora Exemplo", "originalLanguage": "ko" },
+      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2024-12-20T10:00:00-03:00" },
+      "type": "manhwa", "demographics": "seinen",
+      "genres": ["drama", "teste"],
+      "tags": ["dados-antigos", "versão-1.0", "arquivado"],
+      "cover": { "url": "https://files.catbox.moe/6vb7hz.png", "alt": "Capa da Série de Teste 5", "type": "image/png" },
+      "description": "Uma série antiga que serve como base para todos os testes futuros.",
+      "chapters": { "total": 10, "translated": 10, "available": 10, "status": "completed" },
+      "rating": { "community": 4.3, "totalVotes": 95 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste5.json", "format": "json", "size": "90KB" },
+      "priority": 5, "featured": false, "special": true, "latest": false, "completionDate": "2024-12-20"
+    },
+    {
+      "id": "teste-serie-6",
+      "title": "Série de Teste 6: A Interface",
+      "originalTitle": "Test Series 6: The Interface",
+      "slug": "serie-de-teste-6",
+      "author": { "name": "Autor Fictício 2", "originalName": "Fictional Author 2", "nationality": "US" },
+      "publication": { "year": 2025, "publisher": "Editora Exemplo", "originalLanguage": "en" },
+      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-07-05T01:00:00-03:00" },
+      "type": "webcomic", "demographics": "todos",
+      "genres": ["design", "arte", "teste"],
+      "tags": ["ui", "ux", "front-end"],
+      "cover": { "url": "https://files.catbox.moe/byj0hy.png", "alt": "Capa da Série de Teste 6", "type": "image/png" },
+      "description": "Focada nos aspectos visuais de apresentar dados de teste.",
+      "chapters": { "total": "ongoing", "translated": 5, "available": 5, "status": "ongoing" },
+      "rating": { "community": 4.9, "totalVotes": 550 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste6.json", "format": "json", "size": "110KB" },
+      "priority": 6, "featured": true, "special": false, "latest": true, "updateSchedule": "weekly"
+    },
+    {
+      "id": "teste-serie-7",
+      "title": "Série de Teste 7: O Segredo do Schema",
+      "originalTitle": "Test Series 7: The Schema's Secret",
+      "slug": "serie-de-teste-7",
+      "author": { "name": "Autor Fictício 3", "originalName": "Fictional Author 3", "nationality": "JP" },
+      "publication": { "year": 2024, "publisher": "Editora Exemplo", "originalLanguage": "ja" },
+      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-06-30T10:00:00-03:00" },
+      "type": "manga", "demographics": "shounen",
+      "genres": ["mistério", "teste"],
+      "tags": ["validação", "estrutura", "regras"],
+      "cover": { "url": "https://files.catbox.moe/gq4kqy.png", "alt": "Capa da Série de Teste 7", "type": "image/png" },
+      "description": "Uma investigação sobre a estrutura perfeita para os dados.",
+      "chapters": { "total": "ongoing", "translated": 22, "available": 22, "status": "ongoing" },
+      "rating": { "community": 4.6, "totalVotes": 210 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste7.json", "format": "json", "size": "250KB" },
+      "priority": 7, "featured": false, "special": false, "latest": true, "updateSchedule": "bi-weekly"
+    },
+    {
+      "id": "teste-serie-8",
+      "title": "Série de Teste 8: Fim do Arquivo",
+      "originalTitle": "Test Series 8: End of File",
+      "slug": "serie-de-teste-8",
+      "author": { "name": "Autor Fictício 4", "originalName": "Fictional Author 4", "nationality": "KR" },
+      "publication": { "year": 2021, "publisher": "Editora Exemplo", "originalLanguage": "ko" },
+      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2023-11-11T10:00:00-03:00" },
+      "type": "manhwa", "demographics": "seinen",
+      "genres": ["suspense", "teste"],
+      "tags": ["finalização", "conclusão", "eof"],
+      "cover": { "url": "https://files.catbox.moe/4iwgpt.png", "alt": "Capa da Série de Teste 8", "type": "image/png" },
+      "description": "A série que testa os limites e a finalização correta dos dados.",
+      "chapters": { "total": 80, "translated": 80, "available": 80, "status": "completed" },
+      "rating": { "community": 4.7, "totalVotes": 820 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste8.json", "format": "json", "size": "850KB" },
+      "priority": 8, "featured": false, "special": false, "latest": false, "completionDate": "2023-11-11"
+    },
+    {
+      "id": "teste-serie-9",
+      "title": "Série de Teste 9: Meta-Dados",
+      "originalTitle": "Test Series 9: Meta-Data",
+      "slug": "serie-de-teste-9",
+      "author": { "name": "Autor Fictício 1", "originalName": "Fictional Author 1", "nationality": "BR" },
+      "publication": { "year": 2025, "publisher": "Editora Exemplo", "originalLanguage": "pt" },
+      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-07-04T10:00:00-03:00" },
+      "type": "quadrinho", "demographics": "jovem-adulto",
+      "genres": ["filosofia", "teste"],
+      "tags": ["informação", "contexto", "meta"],
+      "cover": { "url": "https://files.catbox.moe/dohukn.png", "alt": "Capa da Série de Teste 9", "type": "image/png" },
+      "description": "Uma série sobre os dados que descrevem outros dados.",
+      "chapters": { "total": "ongoing", "translated": 8, "available": 8, "status": "ongoing" },
+      "rating": { "community": 4.8, "totalVotes": 125 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste9.json", "format": "json", "size": "180KB" },
+      "priority": 9, "featured": true, "special": false, "latest": true, "updateSchedule": "weekly"
+    },
+    {
+      "id": "teste-serie-10",
+      "title": "Série de Teste 10: O Deploy Final",
+      "originalTitle": "Test Series 10: The Final Deploy",
+      "slug": "serie-de-teste-10",
+      "author": { "name": "Autor Fictício 2", "originalName": "Fictional Author 2", "nationality": "US" },
+      "publication": { "year": 2022, "publisher": "Editora Exemplo", "originalLanguage": "en" },
+      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2024-08-22T10:00:00-03:00" },
+      "type": "webcomic", "demographics": "todos",
+      "genres": ["celebração", "teste"],
+      "tags": ["produção", "lançamento", "live"],
+      "cover": { "url": "https://files.catbox.moe/6d5t3r.png", "alt": "Capa da Série de Teste 10", "type": "image/png" },
+      "description": "A comemoração final: quando os dados de teste vão para produção!",
+      "chapters": { "total": 1, "translated": 1, "available": 1, "status": "completed" },
+      "rating": { "community": 5.0, "totalVotes": 1000 },
+      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste10.json", "format": "json", "size": "50KB" },
+      "priority": 10, "featured": true, "special": true, "latest": false, "completionDate": "2024-08-22"
+    }
+  ],
+  "statistics": {
+    "overview": { "totalSeries": 10, "completedSeries": 5, "ongoingSeries": 5, "totalChapters": 256, "totalPages": 25000 },
+    "team": { "totalMembers": 5, "activeMembers": 5, "roles": { "translators": 2, "editors": 1, "typesetters": 1, "quality_assurance": 1 } },
+    "community": { "totalFollowers": 1500, "activeUsers": 500, "averageRating": 4.69, "totalVotes": 4450 },
+    "content": { "totalFileSize": "3.5MB", "averageChapterSize": "14KB", "supportedFormats": ["json", "xml", "yaml"] }
+  },
+  "schedule": {
+    "updates": { "frequency": "weekly", "day": "tuesday", "time": "21:00", "timezone": "America/Sao_Paulo" },
+    "maintenance": { "day": "saturday", "time": "04:00", "duration": "30 minutes", "timezone": "America/Sao_Paulo" }
+  },
+  "technical": {
+    "api": {
+      "version": "1.0",
+      "baseUrl": "https://api.exemplo.com/v1/",
+      "endpoints": { "hub": "hub.json", "series": "series/{slug}.json", "chapters": "series/{slug}/chapters.json" }
+    },
+    "cache": { "policy": "public, max-age=600, stale-while-revalidate=86400", "etag": true, "compression": "gzip" },
+    "formats": { "supported": ["json"], "primary": "json", "encoding": "utf-8" }
+  },
+  "legal": {
+    "copyright": { "notice": "Este conteúdo é para fins de teste e demonstração.", "holder": "Equipe de Teste", "year": "2025" },
+    "disclaimer": "Nenhuma das informações aqui contidas deve ser considerada como um produto final. É um mock de dados.",
+    "support": {
+      "message": "Apoie os criadores das ferramentas que tornaram este teste possível.",
+      "links": [{ "name": "JSON Spec", "url": "https://www.json.org/json-en.html", "language": "en" }]
+    }
+  },
+  "features": {
+    "search": { "enabled": true, "fields": ["title", "description", "tags", "genres"] },
+    "filtering": { "enabled": true, "options": ["status", "genre", "year", "rating"] },
+    "sorting": { "enabled": true, "options": ["priority", "rating", "lastUpdated", "alphabetical"] },
+    "notifications": { "enabled": true, "types": ["new_chapter", "series_complete", "maintenance"] }
+  }
+}
