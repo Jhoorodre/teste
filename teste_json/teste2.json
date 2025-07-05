@@ -1,0 +1,28 @@
+{
+  "title": "A Academia Arcana de Eldoria (Exemplo)",
+  "description": "Este é um item de demonstração para uma história de fantasia que não existe. Acompanhe aprendizes de mago em um mundo de magia e perigo, onde cada feitiço é um teste de coragem.",
+  "artist": "Ilustrador de Teste",
+  "author": "Escritor Fantasma",
+  "cover": "https://files.catbox.moe/pimttn.jpg",
+  "status": "Apenas Demonstração",
+  "chapters": {
+    "001": {
+      "title": "A Prova de Fogo Inicial",
+      "volume": "1",
+      "last_updated": "1748649404",
+      "groups": {
+        "Scanlator de Brinquedo": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Cafeteria da Esquina (Protótipo)",
+  "description": "Protótipo de uma história leve sobre os encontros e desencontros em uma pequena cafeteria. Os personagens e diálogos são gerados para fins de teste e não compõem uma narrativa real.",
+  "artist": "Designer de Teste",
+  "author": "Roteirista de Teste",
+  "cover": "https://files.catbox.moe/prwmcy.jpg",
+  "status": "Em Desenvolvimento (Teste)",
+  "chapters": {
+    "001": {
+      "title": "O Pedido de Sempre",
+      "volume": "1",
+      "last_updated": "1748881227",
+      "groups": {
+        "Tradutores Casuais": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Reencarnado como um Golem de Teste",
+  "description": "Outro mundo, outra vida, mas o mesmo propósito: testar esta interface. Esta é uma história de Isekai que nunca será escrita, sobre um ser que renasce como um golem para carregar dados.",
+  "artist": "Sistema Operacional",
+  "author": "AI de Roteiro",
+  "cover": "https://files.catbox.moe/s4saiz.jpg",
+  "status": "Ciclo Infinito de Teste",
+  "chapters": {
+    "001": {
+      "title": "Inicializando em Outro Mundo",
+      "volume": "1",
+      "last_updated": "1750689461",
+      "groups": {
+        "Tradutores de Outro Mundo": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

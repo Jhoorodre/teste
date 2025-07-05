@@ -1,0 +1,28 @@
+{
+  "title": "O Eco da Meia-Noite (Placeholder)",
+  "description": "Conteúdo de horror fictício para preenchimento de espaço. Uma maldição antiga ressurge em uma vila isolada. Ninguém está a salvo do que se esconde nas sombras. Este mangá não é real.",
+  "artist": "Desenhista Nulo",
+  "author": "Roteirista Nulo",
+  "cover": "https://files.catbox.moe/4d651l.jpg",
+  "status": "Não Publicado",
+  "chapters": {
+    "001": {
+      "title": "O Primeiro Sussurro",
+      "volume": "1",
+      "last_updated": "1748649412",
+      "groups": {
+        "Fantasmas Tradutores": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

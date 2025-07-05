@@ -1,0 +1,28 @@
+{
+  "title": "Caçador de Relíquias (Material de Teste)",
+  "description": "Uma aventura por terras desconhecidas em busca de tesouros lendários. Este título e sua história são completamente fictícios e servem apenas para preencher este espaço de teste.",
+  "artist": "Aventureiro Anônimo",
+  "author": "Explorador de Dados",
+  "cover": "https://files.catbox.moe/kt2xv6.jpg",
+  "status": "Cancelado (Nunca Existiu)",
+  "chapters": {
+    "001": {
+      "title": "O Mapa para o Nada",
+      "volume": "1",
+      "last_updated": "1748649530",
+      "groups": {
+        "Exploradores de Scan": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

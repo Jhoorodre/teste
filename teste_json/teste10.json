@@ -1,0 +1,28 @@
+{
+  "title": "O Algoritmo do Coração (Simulação)",
+  "description": "Simulação de uma história de romance entre dois programas de computador que desenvolvem sentimentos. Este conteúdo é gerado proceduralmente para testes e não possui valor narrativo.",
+  "artist": "Renderizador Gráfico",
+  "author": "Processador Lógico",
+  "cover": "https://files.catbox.moe/pimttn.jpg",
+  "status": "Em Loop (Simulação)",
+  "chapters": {
+    "001": {
+      "title": "Primeiro Contato: Hello World",
+      "volume": "1",
+      "last_updated": "1750689999",
+      "groups": {
+        "Romance Binário Scans": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

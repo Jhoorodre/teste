@@ -1,0 +1,28 @@
+{
+  "title": "A Lâmina Sem Nome (Amostra)",
+  "description": "Amostra de dados para um mangá histórico que nunca foi produzido. Segue a jornada de um samurai errante em um Japão feudal fictício. A narrativa é apenas ilustrativa.",
+  "artist": "Artista de Amostra",
+  "author": "Historiador de Teste",
+  "cover": "https://files.catbox.moe/wstaqc.jpg",
+  "status": "Amostra",
+  "chapters": {
+    "001": {
+      "title": "O Juramento Quebrado",
+      "volume": "1",
+      "last_updated": "1750095719",
+      "groups": {
+        "Dojo Scans": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

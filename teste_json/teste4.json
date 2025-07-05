@@ -1,0 +1,28 @@
+{
+  "title": "Neon Dystopia: Run (Mockup)",
+  "description": "Mockup de dados. Em uma megacidade controlada por corporações, um corredor busca a liberdade através de trabalhos perigosos. A obra é apenas um exemplo para desenvolvimento de interface.",
+  "artist": "CPU-Art",
+  "author": "Script.gen",
+  "cover": "https://files.catbox.moe/1f97u0.jpg",
+  "status": "Em Simulação",
+  "chapters": {
+    "001": {
+      "title": "Fuga do Setor 7",
+      "volume": "1",
+      "last_updated": "1748649419",
+      "groups": {
+        "Datascans": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

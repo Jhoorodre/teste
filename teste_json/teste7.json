@@ -1,0 +1,28 @@
+{
+  "title": "O Caso do Manuscrito Falso (Debug)",
+  "description": "Este é um registro de debug, não uma história. Um detetive precisa resolver um crime que só existe nestes dados de teste. Qualquer semelhança com uma história real é coincidência.",
+  "artist": "Inspetor de Código",
+  "author": "Detetive de Bugs",
+  "cover": "https://files.catbox.moe/4krqy6.jpg",
+  "status": "Apenas Debug",
+  "chapters": {
+    "001": {
+      "title": "A Primeira Pista",
+      "volume": "1",
+      "last_updated": "1749479063",
+      "groups": {
+        "Agência de Testes": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}

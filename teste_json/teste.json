@@ -1,0 +1,28 @@
+{
+  "title": "Crônicas do Vazio Estelar (Teste)",
+  "description": "Obra de ficção científica inexistente, criada apenas para testes de layout. A história segue o Piloto-Fantasma em sua jornada por galáxias esquecidas em busca de um artefato perdido. Este conteúdo não é real.",
+  "artist": "Artista Virtual",
+  "author": "Gerador de Conteúdo",
+  "cover": "https://files.catbox.moe/s4saiz.jpg",
+  "status": "Inexistente",
+  "chapters": {
+    "001": {
+      "title": "O Despertar do Protótipo",
+      "volume": "1",
+      "last_updated": "1748649397",
+      "groups": {
+        "Grupo de Teste Alfa": [
+          "https://files.catbox.moe/tg5urm.jpg",
+          "https://files.catbox.moe/4o7weu.jpg",
+          "https://files.catbox.moe/rjytw8.jpg",
+          "https://files.catbox.moe/5bvfhw.jpg",
+          "https://files.catbox.moe/mzrqjy.jpg",
+          "https://files.catbox.moe/oqqlp5.jpg",
+          "https://files.catbox.moe/0p2ldg.jpg",
+          "https://files.catbox.moe/93b6fh.jpg",
+          "https://files.catbox.moe/99lzxb.jpg"
+        ]
+      }
+    }
+  }
+}
