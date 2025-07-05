@@ -5,284 +5,915 @@
     "encoding": "utf-8"
   },
   "meta": {
-    "version": "1.0.0-test",
-    "lastUpdated": "2025-07-05T02:15:00-03:00",
+    "version": "1.0.0",
+    "lastUpdated": "2025-06-25T10:00:00-03:00",
     "language": "pt-BR",
     "region": "BR",
-    "updateFrequency": "daily",
-    "nextUpdate": "2025-07-06T02:15:00-03:00",
-    "apiVersion": "v1-test",
+    "updateFrequency": "weekly",
+    "nextUpdate": "2025-07-02T10:00:00-03:00",
+    "apiVersion": "v1",
     "cacheControl": {
-      "maxAge": 600,
+      "maxAge": 3600,
       "staleWhileRevalidate": 86400
     }
   },
   "hub": {
-    "id": "hub-de-teste",
-    "title": "Hub de Conteúdo para Testes",
-    "subtitle": "Uma coleção de dados para desenvolvimento",
-    "slug": "hub-de-teste",
+    "id": "tog-brasil-hub",
+    "title": "Tower of God Brasil",
+    "subtitle": "Scanlation Oficial Brasileira",
+    "slug": "tower-of-god-brasil",
     "icon": {
-      "url": "https://files.catbox.moe/gq4kqy.png",
-      "alt": "Ícone do Hub de Teste",
-      "type": "image/png"
+      "url": "https://files.catbox.moe/y8t3n2.jpg",
+      "alt": "Tower of God Brasil Logo",
+      "type": "image/jpeg"
     },
-    "description": "Este é um hub gerado para fins de teste, contendo uma estrutura de dados completa com informações de exemplo para popular uma interface de usuário durante o desenvolvimento.",
-    "disclaimer": "Nenhum dado aqui é real. Todos os direitos de imagens e links pertencem aos seus respectivos donos e são utilizados aqui apenas para demonstração.",
-    "team": {
-      "name": "Equipe de Teste",
-      "type": "desenvolvimento",
-      "status": "active",
-      "founded": "2025",
-      "members": {
-        "total": 5,
-        "translators": 2,
-        "editors": 1,
-        "typesetters": 1,
-        "quality_assurance": 1
-      },
-      "contact": "teste@exemplo.com"
-    },
-    "website": {
-      "primary": "https://exemplo.com",
-      "cdn": "https://cdn.jsdelivr.net/gh/Jhoorodre/teste/"
-    }
+    "description": "Bem-vindo ao Tower of God Brasil! Somos um grupo de fãs apaixonados, dedicados a trazer a épica jornada de Baam e seus companheiros para o público brasileiro com traduções de alta qualidade, feitas com muito cuidado e respeito pela obra original de S.I.U.\n\nNosso objetivo é compartilhar o amor por este universo incrível e garantir que mais pessoas possam escalar a Torre conosco. Todo o nosso trabalho é voluntário e sem fins lucrativos.",
+    "disclaimer": "Lembre-se sempre de apoiar o autor! Se Tower of God for lançado oficialmente no Brasil, compre e incentive o trabalho de S.I.U."
   },
-  "social": [
-    {
-      "id": "discord-test",
-      "name": "Servidor de Teste",
-      "platform": "discord",
-      "url": "https://discord.gg/example",
-      "description": "Comunidade para desenvolvedores",
-      "primary": true,
-      "memberCount": "100+",
-      "features": ["discussions", "updates", "dev-logs"]
+  "team": {
+    "name": "Tower of God Brasil",
+    "type": "scanlation",
+    "status": "active",
+    "founded": "2024",
+    "members": {
+      "total": 10,
+      "translators": 4,
+      "editors": 3,
+      "typesetters": 2,
+      "quality_assurance": 1
     },
-    {
-      "id": "github-test",
-      "name": "Repositório do Projeto",
-      "platform": "github",
-      "url": "https://github.com/Jhoorodre/teste",
-      "description": "Código fonte e documentação",
-      "primary": false,
-      "memberCount": "50+",
-      "features": ["code", "issues", "documentation"]
-    }
-  ],
+    "contact": "contato@togbrasil.com"
+  },
+  "website": {
+    "primary": "https://togbrasil.com",
+    "cdn": "https://cdn.jsdelivr.net/gh/Jhoorodre/DEMO/"
+  },
+  "social": {
+    "platforms": [
+      {
+        "id": "discord",
+        "name": "Discord Oficial",
+        "platform": "discord",
+        "url": "https://discord.gg/G3bYkAhSDG",
+        "description": "Servidor principal para discussões e atualizações",
+        "primary": true,
+        "memberCount": "500+",
+        "features": ["discussions", "updates", "community"]
+      },
+      {
+        "id": "telegram",
+        "name": "Canal Telegram",
+        "platform": "telegram",
+        "url": "https://t.me/ToGBrasil",
+        "description": "Notificações e releases",
+        "primary": false,
+        "memberCount": "300+",
+        "features": ["notifications", "releases"]
+      },
+      {
+        "id": "whatsapp",
+        "name": "Grupo WhatsApp",
+        "platform": "whatsapp",
+        "url": "https://chat.whatsapp.com/E2sfzwQBmtk4G7SXE40d02",
+        "description": "Comunidade para discussões rápidas",
+        "primary": false,
+        "memberCount": "200+",
+        "features": ["quick_discussions", "community"]
+      },
+      {
+        "id": "twitter",
+        "name": "Twitter/X",
+        "platform": "twitter",
+        "url": "https://twitter.com/BrasilTower?s=09",
+        "description": "Atualizações e novidades",
+        "primary": false,
+        "memberCount": "150+",
+        "features": ["updates", "news"]
+      }
+    ]
+  },
   "series": [
     {
-      "id": "teste-serie-1",
-      "title": "Série de Teste 1: A Origem",
-      "originalTitle": "Test Series 1: The Origin",
-      "slug": "serie-de-teste-1",
-      "author": { "name": "Autor Fictício 1", "originalName": "Fictional Author 1", "nationality": "BR" },
-      "publication": { "year": 2021, "publisher": "Editora Exemplo", "originalLanguage": "pt" },
-      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2025-01-10T10:00:00-03:00" },
-      "type": "quadrinho", "demographics": "jovem-adulto",
-      "genres": ["aventura", "teste", "dados"],
-      "tags": ["exemplo", "api", "json"],
-      "cover": { "url": "https://files.catbox.moe/gq4kqy.png", "alt": "Capa da Série de Teste 1", "type": "image/png" },
-      "description": "A primeira série de nossa coleção de testes, explorando os fundamentos da estrutura.",
-      "chapters": { "total": 20, "translated": 20, "available": 20, "status": "completed" },
-      "rating": { "community": 4.5, "totalVotes": 150 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste.json", "format": "json", "size": "150KB" },
-      "priority": 1, "featured": true, "special": false, "latest": false, "completionDate": "2025-01-10"
+      "id": "tog-part1",
+      "title": "Tower of God: Parte 1 – O Irregular",
+      "originalTitle": "Tower of God Season 1",
+      "slug": "tower-of-god-parte-1-o-irregular",
+      "author": {
+        "name": "S.I.U",
+        "originalName": "SIU",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2010,
+        "publisher": "LINE Webtoon",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "completed",
+        "original": "completed",
+        "lastUpdated": "2024-12-15T10:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "adventure", 
+        "drama",
+        "fantasy",
+        "supernatural"
+      ],
+      "tags": [
+        "tower-climbing",
+        "friendship",
+        "betrayal",
+        "power-progression",
+        "tournament"
+      ],
+      "cover": {
+        "url": "https://cdn.myanimelist.net/images/manga/2/223694.jpg",
+        "alt": "Tower of God Parte 1 Cover",
+        "type": "image/jpeg"
+      },
+      "description": "A primeira temporada de Tower of God, onde conhecemos Baam e sua jornada para encontrar Rachel na misteriosa Torre. Uma história sobre amizade, traição e o desejo de escalar até o topo do mundo.",
+      "chapters": {
+        "total": 78,
+        "translated": 78,
+        "available": 78,
+        "status": "completed"
+      },
+      "rating": {
+        "community": 4.8,
+        "totalVotes": 1250
+      },
+      "data": {
+        "url": "https://cdn.jsdelivr.net/gh/Jhoorodre/TOG-Brasil@refs/heads/main/Tower_of_God_Parte_1_O_Irregular.json",
+        "format": "json",
+        "size": "2.1MB"
+      },
+      "priority": 1,
+      "featured": true,
+      "completionDate": "2024-12-15"
     },
     {
-      "id": "teste-serie-2",
-      "title": "Série de Teste 2: O Desafio",
-      "originalTitle": "Test Series 2: The Challenge",
-      "slug": "serie-de-teste-2",
-      "author": { "name": "Autor Fictício 2", "originalName": "Fictional Author 2", "nationality": "US" },
-      "publication": { "year": 2022, "publisher": "Editora Exemplo", "originalLanguage": "en" },
-      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-07-01T10:00:00-03:00" },
-      "type": "webcomic", "demographics": "todos",
-      "genres": ["comedia", "teste"],
-      "tags": ["mock", "placeholder", "desenvolvimento"],
-      "cover": { "url": "https://files.catbox.moe/o8wenn.png", "alt": "Capa da Série de Teste 2", "type": "image/png" },
-      "description": "Uma nova aventura com mais complexidade e desafios de dados.",
-      "chapters": { "total": "ongoing", "translated": 35, "available": 35, "status": "ongoing" },
-      "rating": { "community": 4.8, "totalVotes": 320 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste2.json", "format": "json", "size": "310KB" },
-      "priority": 2, "featured": true, "special": false, "latest": true, "updateSchedule": "weekly"
+      "id": "tog-part2",
+      "title": "Tower of God: Parte 2 – O Retorno do Príncipe",
+      "originalTitle": "Tower of God Season 2",
+      "slug": "tower-of-god-parte-2-o-retorno-do-principe",
+      "author": {
+        "name": "S.I.U",
+        "originalName": "SIU",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2012,
+        "publisher": "LINE Webtoon",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "completed",
+        "lastUpdated": "2025-06-20T10:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "adventure",
+        "drama",
+        "fantasy",
+        "supernatural"
+      ],
+      "tags": [
+        "identity-crisis",
+        "team-building",
+        "political-intrigue",
+        "power-progression",
+        "tournament"
+      ],
+      "cover": {
+        "url": "https://static.wikia.nocookie.net/towerofgod/images/1/1b/ToG-Book09.jpg/revision/latest?cb=20220707194613",
+        "alt": "Tower of God Parte 2 Cover",
+        "type": "image/jpeg"
+      },
+      "description": "A segunda temporada continua a história de Baam, agora conhecido como Jyu Viole Grace, enquanto ele navega pelos desafios mais perigosos da Torre. Novos aliados, inimigos poderosos e segredos sombrios aguardam.",
+      "chapters": {
+        "total": 337,
+        "translated": 337,
+        "available": 337,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.9,
+        "totalVotes": 1850
+      },
+      "data": {
+        "url": "https://cdn.jsdelivr.net/gh/Jhoorodre/TOG-Brasil@main/Tower_of_God_Parte_2_%E2%80%93_O_Retorno_do_Pr%C3%ADncipe.json",
+        "format": "json",
+        "size": "8.7MB"
+      },
+      "priority": 2,
+      "featured": true
     },
     {
-      "id": "teste-serie-3",
-      "title": "Série de Teste 3: A Resposta",
-      "originalTitle": "Test Series 3: The Response",
-      "slug": "serie-de-teste-3",
-      "author": { "name": "Autor Fictício 3", "originalName": "Fictional Author 3", "nationality": "JP" },
-      "publication": { "year": 2023, "publisher": "Editora Exemplo", "originalLanguage": "ja" },
-      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2025-03-15T10:00:00-03:00" },
-      "type": "manga", "demographics": "shounen",
-      "genres": ["ação", "teste"],
-      "tags": ["endpoint", "http", "fetch"],
-      "cover": { "url": "https://files.catbox.moe/baaiy7.png", "alt": "Capa da Série de Teste 3", "type": "image/png" },
-      "description": "Nesta série, os protagonistas finalmente encontram a resposta que procuravam nos dados.",
-      "chapters": { "total": 50, "translated": 50, "available": 50, "status": "completed" },
-      "rating": { "community": 4.7, "totalVotes": 450 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste3.json", "format": "json", "size": "500KB" },
-      "priority": 3, "featured": true, "special": false, "latest": false, "completionDate": "2025-03-15"
+      "id": "tog-urek",
+      "title": "Tower of God: A Ascensão de Urek Mazzino",
+      "originalTitle": "Tower of God: Urek Mazino",
+      "slug": "tower-of-god-a-ascensao-de-urek-mazzino",
+      "author": {
+        "name": "S.I.U",
+        "originalName": "SIU",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2019,
+        "publisher": "LINE Webtoon",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "completed",
+        "original": "completed",
+        "lastUpdated": "2024-08-10T10:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "adventure",
+        "fantasy"
+      ],
+      "tags": [
+        "prequel",
+        "irregular",
+        "power-fantasy",
+        "one-shot"
+      ],
+      "cover": {
+        "url": "https://cdn.myanimelist.net/images/manga/2/324137l.jpg",
+        "alt": "Tower of God Urek Mazzino Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Uma história especial focada em Urek Mazino, o Irregular mais poderoso da Torre, e sua ascensão lendária. Descubra os segredos por trás do homem que se tornou uma lenda.",
+      "chapters": {
+        "total": 1,
+        "translated": 1,
+        "available": 1,
+        "status": "completed"
+      },
+      "rating": {
+        "community": 4.7,
+        "totalVotes": 890
+      },
+      "data": {
+        "url": "https://cdn.jsdelivr.net/gh/Jhoorodre/TOG-Brasil@main/Tower_of_God_-_A_Ascensao_de_Urek_Mazzino.json",
+        "format": "json",
+        "size": "156KB"
+      },
+      "priority": 3,
+      "special": true,
+      "featured": false,
+      "completionDate": "2024-08-10"
     },
     {
-      "id": "teste-serie-4",
-      "title": "Série de Teste 4: Crônicas do Cache",
-      "originalTitle": "Test Series 4: Cache Chronicles",
-      "slug": "serie-de-teste-4",
-      "author": { "name": "Autor Fictício 1", "originalName": "Fictional Author 1", "nationality": "BR" },
-      "publication": { "year": 2024, "publisher": "Editora Exemplo", "originalLanguage": "pt" },
-      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-06-28T10:00:00-03:00" },
-      "type": "quadrinho", "demographics": "jovem-adulto",
-      "genres": ["ficção-científica", "teste"],
-      "tags": ["performance", "cdn", "otimização"],
-      "cover": { "url": "https://files.catbox.moe/wgltgx.png", "alt": "Capa da Série de Teste 4", "type": "image/png" },
-      "description": "Uma história sobre velocidade, eficiência e a busca pelos dados mais rápidos.",
-      "chapters": { "total": "ongoing", "translated": 15, "available": 15, "status": "ongoing" },
-      "rating": { "community": 4.6, "totalVotes": 180 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste4.json", "format": "json", "size": "220KB" },
-      "priority": 4, "featured": false, "special": false, "latest": true, "updateSchedule": "monthly"
+      "id": "tog-part3",
+      "title": "Tower of God: Parte 3 – A Batalha das Grandes Famílias",
+      "originalTitle": "Tower of God Season 3",
+      "slug": "tower-of-god-parte-3-a-batalha-das-grandes-familias",
+      "author": {
+        "name": "S.I.U",
+        "originalName": "SIU",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2023,
+        "publisher": "LINE Webtoon",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "ongoing",
+        "lastUpdated": "2025-06-24T10:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "adventure",
+        "drama",
+        "fantasy",
+        "supernatural"
+      ],
+      "tags": [
+        "war",
+        "family-politics",
+        "power-struggle",
+        "epic-battles",
+        "character-development"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/hzj0y9.jpg",
+        "alt": "Tower of God Parte 3 Cover",
+        "type": "image/jpeg"
+      },
+      "description": "A terceira temporada intensifica os conflitos com a guerra entre as Grandes Famílias da Torre, enquanto Baam enfrenta seus maiores desafios até agora. O destino da Torre está em jogo.",
+      "chapters": {
+        "total": "ongoing",
+        "translated": 45,
+        "available": 45,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.8,
+        "totalVotes": 1120
+      },
+      "data": {
+        "url": "https://cdn.jsdelivr.net/gh/Jhoorodre/TOG-Brasil@main/Tower_of_God_Parte_3_%E2%80%93_A_Batalha_entre_os_L%C3%ADderes_das_Fam%C3%ADlias.json",
+        "format": "json",
+        "size": "3.2MB"
+      },
+      "priority": 4,
+      "latest": true,
+      "featured": true,
+      "updateSchedule": "weekly"
     },
     {
-      "id": "teste-serie-5",
-      "title": "Série de Teste 5: O Legado",
-      "originalTitle": "Test Series 5: The Legacy",
-      "slug": "serie-de-teste-5",
-      "author": { "name": "Autor Fictício 4", "originalName": "Fictional Author 4", "nationality": "KR" },
-      "publication": { "year": 2020, "publisher": "Editora Exemplo", "originalLanguage": "ko" },
-      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2024-12-20T10:00:00-03:00" },
-      "type": "manhwa", "demographics": "seinen",
-      "genres": ["drama", "teste"],
-      "tags": ["dados-antigos", "versão-1.0", "arquivado"],
-      "cover": { "url": "https://files.catbox.moe/6vb7hz.png", "alt": "Capa da Série de Teste 5", "type": "image/png" },
-      "description": "Uma série antiga que serve como base para todos os testes futuros.",
-      "chapters": { "total": 10, "translated": 10, "available": 10, "status": "completed" },
-      "rating": { "community": 4.3, "totalVotes": 95 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste5.json", "format": "json", "size": "90KB" },
-      "priority": 5, "featured": false, "special": true, "latest": false, "completionDate": "2024-12-20"
+      "id": "celestial-gate",
+      "title": "Portão Celestial: O Despertar do Guardião",
+      "originalTitle": "Celestial Gate: Guardian's Awakening",
+      "slug": "portao-celestial-o-despertar-do-guardiao",
+      "author": {
+        "name": "Yuki Suzuki",
+        "originalName": "鈴木 優希",
+        "nationality": "JP"
+      },
+      "publication": {
+        "year": 2021,
+        "publisher": "KakaoPage",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "ongoing",
+        "lastUpdated": "2025-06-28T12:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "fantasy",
+        "adventure",
+        "magic"
+      ],
+      "tags": [
+        "gate-fantasy",
+        "system",
+        "monster-hunting",
+        "leveling-up"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/s4saiz.jpg",
+        "alt": "Portão Celestial Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Quando portais misteriosos surgem na Terra, um jovem comum desperta poderes incríveis e se torna a última esperança da humanidade contra as hordas de monstros que ameaçam o mundo.",
+      "chapters": {
+        "total": "ongoing",
+        "translated": 85,
+        "available": 85,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.7,
+        "totalVotes": 980
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste.json",
+        "format": "json",
+        "size": "4.1MB"
+      },
+      "priority": 5,
+      "latest": true,
+      "featured": true,
+      "updateSchedule": "weekly"
     },
     {
-      "id": "teste-serie-6",
-      "title": "Série de Teste 6: A Interface",
-      "originalTitle": "Test Series 6: The Interface",
-      "slug": "serie-de-teste-6",
-      "author": { "name": "Autor Fictício 2", "originalName": "Fictional Author 2", "nationality": "US" },
-      "publication": { "year": 2025, "publisher": "Editora Exemplo", "originalLanguage": "en" },
-      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-07-05T01:00:00-03:00" },
-      "type": "webcomic", "demographics": "todos",
-      "genres": ["design", "arte", "teste"],
-      "tags": ["ui", "ux", "front-end"],
-      "cover": { "url": "https://files.catbox.moe/byj0hy.png", "alt": "Capa da Série de Teste 6", "type": "image/png" },
-      "description": "Focada nos aspectos visuais de apresentar dados de teste.",
-      "chapters": { "total": "ongoing", "translated": 5, "available": 5, "status": "ongoing" },
-      "rating": { "community": 4.9, "totalVotes": 550 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste6.json", "format": "json", "size": "110KB" },
-      "priority": 6, "featured": true, "special": false, "latest": true, "updateSchedule": "weekly"
+      "id": "shadow-monarch",
+      "title": "Monarca das Sombras: Legado Esquecido",
+      "originalTitle": "Shadow Monarch: Forgotten Legacy",
+      "slug": "monarca-das-sombras-legado-esquecido",
+      "author": {
+        "name": "Kim Min-jun",
+        "originalName": "김민준",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2020,
+        "publisher": "Naver Webtoon",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "completed",
+        "original": "completed",
+        "lastUpdated": "2025-01-10T18:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "seinen",
+      "genres": [
+        "action",
+        "dark-fantasy",
+        "supernatural"
+      ],
+      "tags": [
+        "necromancer",
+        "anti-hero",
+        "revenge",
+        "power-progression"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/pimttn.jpg",
+        "alt": "Monarca das Sombras Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Traído e deixado para morrer, um caçador de baixo nível faz um pacto com uma entidade sombria, retornando como o Monarca das Sombras para se vingar daqueles que o traíram.",
+      "chapters": {
+        "total": 150,
+        "translated": 150,
+        "available": 150,
+        "status": "completed"
+      },
+      "rating": {
+        "community": 4.9,
+        "totalVotes": 2100
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste2.json",
+        "format": "json",
+        "size": "7.2MB"
+      },
+      "priority": 6,
+      "featured": true,
+      "completionDate": "2025-01-10"
     },
     {
-      "id": "teste-serie-7",
-      "title": "Série de Teste 7: O Segredo do Schema",
-      "originalTitle": "Test Series 7: The Schema's Secret",
-      "slug": "serie-de-teste-7",
-      "author": { "name": "Autor Fictício 3", "originalName": "Fictional Author 3", "nationality": "JP" },
-      "publication": { "year": 2024, "publisher": "Editora Exemplo", "originalLanguage": "ja" },
-      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-06-30T10:00:00-03:00" },
-      "type": "manga", "demographics": "shounen",
-      "genres": ["mistério", "teste"],
-      "tags": ["validação", "estrutura", "regras"],
-      "cover": { "url": "https://files.catbox.moe/gq4kqy.png", "alt": "Capa da Série de Teste 7", "type": "image/png" },
-      "description": "Uma investigação sobre a estrutura perfeita para os dados.",
-      "chapters": { "total": "ongoing", "translated": 22, "available": 22, "status": "ongoing" },
-      "rating": { "community": 4.6, "totalVotes": 210 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste7.json", "format": "json", "size": "250KB" },
-      "priority": 7, "featured": false, "special": false, "latest": true, "updateSchedule": "bi-weekly"
+      "id": "arcane-chronicles",
+      "title": "Crônicas Arcanas: O Último Mago",
+      "originalTitle": "Arcane Chronicles: The Last Mage",
+      "slug": "cronicas-arcanas-o-ultimo-mago",
+      "author": {
+        "name": "R. A. Salvatore",
+        "originalName": "Robert Anthony Salvatore",
+        "nationality": "US"
+      },
+      "publication": {
+        "year": 2022,
+        "publisher": "Tapas",
+        "originalLanguage": "en"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "ongoing",
+        "lastUpdated": "2025-06-30T09:00:00-03:00"
+      },
+      "type": "webtoon",
+      "demographics": "shounen",
+      "genres": [
+        "fantasy",
+        "magic",
+        "school-life",
+        "adventure"
+      ],
+      "tags": [
+        "magic-academy",
+        "chosen-one",
+        "coming-of-age",
+        "world-building"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/4d651l.jpg",
+        "alt": "Crônicas Arcanas Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Em um mundo onde a magia está desaparecendo, um jovem descobre ser o último com potencial para se tornar um mago. Ele deve frequentar uma academia secreta para dominar seus poderes e salvar a magia.",
+      "chapters": {
+        "total": "ongoing",
+        "translated": 60,
+        "available": 60,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.6,
+        "totalVotes": 750
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste3.json",
+        "format": "json",
+        "size": "3.5MB"
+      },
+      "priority": 7,
+      "latest": true,
+      "featured": false,
+      "updateSchedule": "bi-weekly"
     },
     {
-      "id": "teste-serie-8",
-      "title": "Série de Teste 8: Fim do Arquivo",
-      "originalTitle": "Test Series 8: End of File",
-      "slug": "serie-de-teste-8",
-      "author": { "name": "Autor Fictício 4", "originalName": "Fictional Author 4", "nationality": "KR" },
-      "publication": { "year": 2021, "publisher": "Editora Exemplo", "originalLanguage": "ko" },
-      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2023-11-11T10:00:00-03:00" },
-      "type": "manhwa", "demographics": "seinen",
-      "genres": ["suspense", "teste"],
-      "tags": ["finalização", "conclusão", "eof"],
-      "cover": { "url": "https://files.catbox.moe/4iwgpt.png", "alt": "Capa da Série de Teste 8", "type": "image/png" },
-      "description": "A série que testa os limites e a finalização correta dos dados.",
-      "chapters": { "total": 80, "translated": 80, "available": 80, "status": "completed" },
-      "rating": { "community": 4.7, "totalVotes": 820 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste8.json", "format": "json", "size": "850KB" },
-      "priority": 8, "featured": false, "special": false, "latest": false, "completionDate": "2023-11-11"
+      "id": "void-walker",
+      "title": "Andarilho do Vazio",
+      "originalTitle": "Void Walker",
+      "slug": "andarilho-do-vazio",
+      "author": {
+        "name": "Lee Hyun",
+        "originalName": "이현",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2023,
+        "publisher": "Ridibooks",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "ongoing",
+        "lastUpdated": "2025-07-03T22:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "seinen",
+      "genres": [
+        "action",
+        "sci-fi",
+        "horror",
+        "supernatural"
+      ],
+      "tags": [
+        "cosmic-horror",
+        "survival",
+        "psychological",
+        "dystopian"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/1f97u0.jpg",
+        "alt": "Andarilho do Vazio Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Após um evento catastrófico que fundiu a realidade com uma dimensão de pesadelos, um sobrevivente ganha a habilidade de caminhar pelo 'Vazio', enfrentando horrores indescritíveis para encontrar uma cura para o mundo.",
+      "chapters": {
+        "total": "ongoing",
+        "translated": 42,
+        "available": 42,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.8,
+        "totalVotes": 1300
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste4.json",
+        "format": "json",
+        "size": "2.8MB"
+      },
+      "priority": 8,
+      "latest": true,
+      "featured": true,
+      "updateSchedule": "weekly"
     },
     {
-      "id": "teste-serie-9",
-      "title": "Série de Teste 9: Meta-Dados",
-      "originalTitle": "Test Series 9: Meta-Data",
-      "slug": "serie-de-teste-9",
-      "author": { "name": "Autor Fictício 1", "originalName": "Fictional Author 1", "nationality": "BR" },
-      "publication": { "year": 2025, "publisher": "Editora Exemplo", "originalLanguage": "pt" },
-      "status": { "translation": "ongoing", "original": "ongoing", "lastUpdated": "2025-07-04T10:00:00-03:00" },
-      "type": "quadrinho", "demographics": "jovem-adulto",
-      "genres": ["filosofia", "teste"],
-      "tags": ["informação", "contexto", "meta"],
-      "cover": { "url": "https://files.catbox.moe/dohukn.png", "alt": "Capa da Série de Teste 9", "type": "image/png" },
-      "description": "Uma série sobre os dados que descrevem outros dados.",
-      "chapters": { "total": "ongoing", "translated": 8, "available": 8, "status": "ongoing" },
-      "rating": { "community": 4.8, "totalVotes": 125 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste9.json", "format": "json", "size": "180KB" },
-      "priority": 9, "featured": true, "special": false, "latest": true, "updateSchedule": "weekly"
+      "id": "iron-fist",
+      "title": "Punho de Ferro: Renascimento do Dragão",
+      "originalTitle": "Iron Fist: Dragon's Rebirth",
+      "slug": "punho-de-ferro-renascimento-do-dragao",
+      "author": {
+        "name": "Zhang Wei",
+        "originalName": "张伟",
+        "nationality": "CN"
+      },
+      "publication": {
+        "year": 2019,
+        "publisher": "Tencent Comics",
+        "originalLanguage": "zh"
+      },
+      "status": {
+        "translation": "completed",
+        "original": "completed",
+        "lastUpdated": "2023-11-20T10:00:00-03:00"
+      },
+      "type": "manhua",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "martial-arts",
+        "fantasy"
+      ],
+      "tags": [
+        "cultivation",
+        "reincarnation",
+        "tournament",
+        "wuxia"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/kt2xv6.jpg",
+        "alt": "Punho de Ferro Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Um mestre de artes marciais de um mundo antigo reencarna no corpo de um jovem em uma sociedade moderna. Ele deve adaptar suas técnicas de 'cultivo' para se tornar o mais forte em um novo mundo.",
+      "chapters": {
+        "total": 220,
+        "translated": 220,
+        "available": 220,
+        "status": "completed"
+      },
+      "rating": {
+        "community": 4.5,
+        "totalVotes": 1500
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste5.json",
+        "format": "json",
+        "size": "9.5MB"
+      },
+      "priority": 9,
+      "featured": false,
+      "completionDate": "2023-11-20"
     },
     {
-      "id": "teste-serie-10",
-      "title": "Série de Teste 10: O Deploy Final",
-      "originalTitle": "Test Series 10: The Final Deploy",
-      "slug": "serie-de-teste-10",
-      "author": { "name": "Autor Fictício 2", "originalName": "Fictional Author 2", "nationality": "US" },
-      "publication": { "year": 2022, "publisher": "Editora Exemplo", "originalLanguage": "en" },
-      "status": { "translation": "completed", "original": "completed", "lastUpdated": "2024-08-22T10:00:00-03:00" },
-      "type": "webcomic", "demographics": "todos",
-      "genres": ["celebração", "teste"],
-      "tags": ["produção", "lançamento", "live"],
-      "cover": { "url": "https://files.catbox.moe/6d5t3r.png", "alt": "Capa da Série de Teste 10", "type": "image/png" },
-      "description": "A comemoração final: quando os dados de teste vão para produção!",
-      "chapters": { "total": 1, "translated": 1, "available": 1, "status": "completed" },
-      "rating": { "community": 5.0, "totalVotes": 1000 },
-      "data": { "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste10.json", "format": "json", "size": "50KB" },
-      "priority": 10, "featured": true, "special": true, "latest": false, "completionDate": "2024-08-22"
+      "id": "stellar-odyssey",
+      "title": "Odisseia Estelar",
+      "originalTitle": "Stellar Odyssey",
+      "slug": "odisseia-estelar",
+      "author": {
+        "name": "Jane Doe",
+        "originalName": "Jane Doe",
+        "nationality": "US"
+      },
+      "publication": {
+        "year": 2024,
+        "publisher": "Webtoon Originals",
+        "originalLanguage": "en"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "ongoing",
+        "lastUpdated": "2025-07-01T15:00:00-03:00"
+      },
+      "type": "webtoon",
+      "demographics": "josei",
+      "genres": [
+        "sci-fi",
+        "romance",
+        "adventure",
+        "space-opera"
+      ],
+      "tags": [
+        "space-exploration",
+        "alien-races",
+        "political-intrigue",
+        "slow-burn-romance"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/prwmcy.jpg",
+        "alt": "Odisseia Estelar Cover",
+        "type": "image/jpeg"
+      },
+      "description": "A capitã de uma nave de exploração se envolve em uma conspiração galáctica ao resgatar um misterioso náufrago. Juntos, eles precisam navegar por alianças perigosas para desvendar um segredo que pode mudar o universo.",
+      "chapters": {
+        "total": "ongoing",
+        "translated": 25,
+        "available": 25,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.8,
+        "totalVotes": 600
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste6.json",
+        "format": "json",
+        "size": "1.8MB"
+      },
+      "priority": 10,
+      "latest": true,
+      "featured": false,
+      "updateSchedule": "monthly"
+    },
+    {
+      "id": "yggdrasil-diver",
+      "title": "Mergulhador de Yggdrasil",
+      "originalTitle": "ユグドラシル・ダイバー",
+      "slug": "mergulhador-de-yggdrasil",
+      "author": {
+        "name": "Takeda Yuu",
+        "originalName": "武田 結",
+        "nationality": "JP"
+      },
+      "publication": {
+        "year": 2023,
+        "publisher": "Jump+",
+        "originalLanguage": "ja"
+      },
+      "status": {
+        "translation": "ongoing",
+        "original": "ongoing",
+        "lastUpdated": "2025-06-29T20:00:00-03:00"
+      },
+      "type": "manga",
+      "demographics": "shounen",
+      "genres": [
+        "action",
+        "fantasy",
+        "isekai"
+      ],
+      "tags": [
+        "virtual-reality",
+        "game-world",
+        "norse-mythology",
+        "full-dive-vrmmo"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/4krqy6.jpg",
+        "alt": "Mergulhador de Yggdrasil Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Em 2042, o VRMMORPG de imersão total 'Yggdrasil Online' é o maior fenômeno mundial. Um jogador profissional busca alcançar a raiz da Árvore do Mundo, um feito nunca antes realizado, na esperança de encontrar seu irmão desaparecido no jogo.",
+      "chapters": {
+        "total": "ongoing",
+        "translated": 38,
+        "available": 38,
+        "status": "ongoing"
+      },
+      "rating": {
+        "community": 4.7,
+        "totalVotes": 820
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste7.json",
+        "format": "json",
+        "size": "2.1MB"
+      },
+      "priority": 11,
+      "latest": true,
+      "featured": true,
+      "updateSchedule": "weekly"
+    },
+    {
+      "id": "crimson-curse",
+      "title": "Maldição Carmesim: Conto da Lua de Sangue",
+      "originalTitle": "Crimson Curse: Tale of the Blood Moon",
+      "slug": "maldicao-carmesim-conto-da-lua-de-sangue",
+      "author": {
+        "name": "Park Seo-yeon",
+        "originalName": "박서연",
+        "nationality": "KR"
+      },
+      "publication": {
+        "year": 2022,
+        "publisher": "Lezhin Comics",
+        "originalLanguage": "ko"
+      },
+      "status": {
+        "translation": "completed",
+        "original": "completed",
+        "lastUpdated": "2024-09-05T14:00:00-03:00"
+      },
+      "type": "manhwa",
+      "demographics": "josei",
+      "genres": [
+        "romance",
+        "historical",
+        "fantasy",
+        "drama"
+      ],
+      "tags": [
+        "vampire",
+        "forbidden-love",
+        "curse",
+        "political-drama"
+      ],
+      "cover": {
+        "url": "https://files.catbox.moe/wstaqc.jpg",
+        "alt": "Maldição Carmesim Cover",
+        "type": "image/jpeg"
+      },
+      "description": "Uma nobre amaldiçoada a se transformar em uma criatura sedenta por sangue a cada lua cheia se apaixona por um caçador de vampiros encarregado de erradicar sua linhagem. Um romance trágico em meio a segredos e deveres.",
+      "chapters": {
+        "total": 90,
+        "translated": 90,
+        "available": 90,
+        "status": "completed"
+      },
+      "rating": {
+        "community": 4.9,
+        "totalVotes": 1950
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/Jhoorodre/teste/refs/heads/main/teste_json/teste8.json",
+        "format": "json",
+        "size": "5.0MB"
+      },
+      "priority": 12,
+      "featured": true,
+      "completionDate": "2024-09-05"
     }
   ],
   "statistics": {
-    "overview": { "totalSeries": 10, "completedSeries": 5, "ongoingSeries": 5, "totalChapters": 256, "totalPages": 25000 },
-    "team": { "totalMembers": 5, "activeMembers": 5, "roles": { "translators": 2, "editors": 1, "typesetters": 1, "quality_assurance": 1 } },
-    "community": { "totalFollowers": 1500, "activeUsers": 500, "averageRating": 4.69, "totalVotes": 4450 },
-    "content": { "totalFileSize": "3.5MB", "averageChapterSize": "14KB", "supportedFormats": ["json", "xml", "yaml"] }
+    "overview": {
+      "totalSeries": 12,
+      "completedSeries": 5,
+      "ongoingSeries": 7,
+      "totalChapters": 1056,
+      "totalPages": 35000
+    },
+    "team": {
+      "totalMembers": 10,
+      "activeMembers": 8,
+      "roles": {
+        "translators": 4,
+        "editors": 3,
+        "typesetters": 2,
+        "quality_assurance": 1
+      }
+    },
+    "community": {
+      "totalFollowers": 3500,
+      "activeUsers": 1500,
+      "averageRating": 4.7,
+      "totalVotes": 15150
+    },
+    "content": {
+      "totalFileSize": "47.2MB",
+      "averageChapterSize": "45KB",
+      "supportedFormats": ["json", "cbz", "pdf"]
+    }
   },
   "schedule": {
-    "updates": { "frequency": "weekly", "day": "tuesday", "time": "21:00", "timezone": "America/Sao_Paulo" },
-    "maintenance": { "day": "saturday", "time": "04:00", "duration": "30 minutes", "timezone": "America/Sao_Paulo" }
+    "updates": {
+      "frequency": "weekly",
+      "day": "sunday",
+      "time": "10:00",
+      "timezone": "America/Sao_Paulo"
+    },
+    "maintenance": {
+      "day": "saturday",
+      "time": "02:00",
+      "duration": "1-2 hours",
+      "timezone": "America/Sao_Paulo"
+    }
   },
   "technical": {
     "api": {
       "version": "1.0",
-      "baseUrl": "https://api.exemplo.com/v1/",
-      "endpoints": { "hub": "hub.json", "series": "series/{slug}.json", "chapters": "series/{slug}/chapters.json" }
+      "baseUrl": "https://cdn.jsdelivr.net/gh/Jhoorodre/DEMO/",
+      "endpoints": {
+        "hub": "hub.json",
+        "series": "series/{id}.json",
+        "chapters": "series/{id}/chapters.json"
+      }
     },
-    "cache": { "policy": "public, max-age=600, stale-while-revalidate=86400", "etag": true, "compression": "gzip" },
-    "formats": { "supported": ["json"], "primary": "json", "encoding": "utf-8" }
+    "cache": {
+      "policy": "public, max-age=3600, stale-while-revalidate=86400",
+      "etag": true,
+      "compression": "gzip"
+    },
+    "formats": {
+      "supported": ["json", "jsonld", "xml"],
+      "primary": "json",
+      "encoding": "utf-8"
+    }
   },
   "legal": {
-    "copyright": { "notice": "Este conteúdo é para fins de teste e demonstração.", "holder": "Equipe de Teste", "year": "2025" },
-    "disclaimer": "Nenhuma das informações aqui contidas deve ser considerada como um produto final. É um mock de dados.",
+    "copyright": {
+      "notice": "Este é um projeto de fãs sem fins lucrativos. Todos os direitos pertencem ao autor original S.I.U e à LINE Webtoon.",
+      "holder": "S.I.U / LINE Webtoon",
+      "year": "2010-2025"
+    },
+    "disclaimer": "Este projeto é uma tradução não oficial feita por fãs. Não possui afiliação com S.I.U ou LINE Webtoon.",
     "support": {
-      "message": "Apoie os criadores das ferramentas que tornaram este teste possível.",
-      "links": [{ "name": "JSON Spec", "url": "https://www.json.org/json-en.html", "language": "en" }]
+      "message": "Apoie o autor lendo oficialmente em:",
+      "links": [
+        {
+          "name": "LINE Webtoon (English)",
+          "url": "https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95",
+          "language": "en"
+        },
+        {
+          "name": "Naver Webtoon (Korean)",
+          "url": "https://comic.naver.com/webtoon/list?titleId=183559",
+          "language": "ko"
+        }
+      ]
     }
   },
   "features": {
-    "search": { "enabled": true, "fields": ["title", "description", "tags", "genres"] },
-    "filtering": { "enabled": true, "options": ["status", "genre", "year", "rating"] },
-    "sorting": { "enabled": true, "options": ["priority", "rating", "lastUpdated", "alphabetical"] },
-    "notifications": { "enabled": true, "types": ["new_chapter", "series_complete", "maintenance"] }
+    "search": {
+      "enabled": true,
+      "fields": ["title", "description", "tags", "genres"]
+    },
+    "filtering": {
+      "enabled": true,
+      "options": ["status", "genre", "year", "rating", "completion"]
+    },
+    "sorting": {
+      "enabled": true,
+      "options": ["priority", "rating", "lastUpdated", "alphabetical"]
+    },
+    "notifications": {
+      "enabled": true,
+      "types": ["new_chapter", "series_complete", "maintenance"]
+    }
   }
 }
