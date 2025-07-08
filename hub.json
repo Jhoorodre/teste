@@ -6,11 +6,11 @@
   },
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-07-08T17:28:48.690Z",
+    "lastUpdated": "2025-07-08T17:46:39.079Z",
     "language": "pt-BR",
     "region": "BR",
     "updateFrequency": "weekly",
-    "nextUpdate": "2025-07-15T17:28:48.690Z",
+    "nextUpdate": "2025-07-15T17:46:39.080Z",
     "apiVersion": "v1",
     "cacheControl": {
       "maxAge": 3600,
@@ -18,15 +18,15 @@
     }
   },
   "hub": {
-    "id": "delano",
-    "title": "DELANO",
-    "subtitle": "OFF DELABO",
-    "slug": "delano",
+    "id": "asdasd",
+    "title": "aaaaaaaaaa",
+    "subtitle": "ddddd",
+    "slug": "aaaaaaaaaa",
     "icon": null,
-    "description": "TESTATAATTATAT",
+    "description": "efasdfwefwsdvwsegwedrfvsdfredwsfrewsgrfg",
     "disclaimer": "Lembre-se sempre de apoiar o autor original!",
     "team": {
-      "name": "SSSSS",
+      "name": "DELANO",
       "type": "translation",
       "status": "active",
       "founded": "2025",
