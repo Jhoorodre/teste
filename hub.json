@@ -1,14 +1,14 @@
 {
   "hub": {
     "title": "DELANO",
-    "description": "TESTE DO DELANO",
+    "description": "TESTE DE LANO",
     "author": "POG",
     "tags": [
       "scan",
       "manga"
     ],
     "icon": null,
-    "lastUpdate": "2025-07-08T17:18:05.795Z",
+    "lastUpdate": "2025-07-08T17:21:18.395Z",
     "version": "1.0",
     "type": "scan",
     "totalItems": 0
