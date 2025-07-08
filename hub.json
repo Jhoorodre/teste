@@ -6,11 +6,11 @@
   },
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-07-08T18:00:25.353Z",
+    "lastUpdated": "2025-07-08T18:05:01.541Z",
     "language": "pt-BR",
     "region": "BR",
     "updateFrequency": "weekly",
-    "nextUpdate": "2025-07-15T18:00:25.353Z",
+    "nextUpdate": "2025-07-15T18:05:01.541Z",
     "apiVersion": "v1",
     "cacheControl": {
       "maxAge": 3600,
@@ -18,15 +18,15 @@
     }
   },
   "hub": {
-    "id": "delano",
-    "title": "DELANO",
-    "subtitle": "TESTES",
-    "slug": "delano",
+    "id": "sdsdf",
+    "title": "sdsdf",
+    "subtitle": "dsdfsdf",
+    "slug": "sdsdf",
     "icon": null,
-    "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "description": "sdfsdfsdfsd",
     "disclaimer": "Lembre-se sempre de apoiar o autor original!",
     "team": {
-      "name": "DELANO",
+      "name": "sssssss",
       "type": "scanlation",
       "status": "active",
       "founded": "2025",
