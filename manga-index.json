@@ -1,8 +1,8 @@
 {
-  "title": "TODO",
-  "description": "TODO",
-  "artist": "TODO",
-  "author": "TODO",
+  "title": "Tower of God A Ascensão de Urek Mazzino",
+  "description": "Manga: Tower of God A Ascensão de Urek Mazzino",
+  "artist": "SIU",
+  "author": "SIU",
   "cover": "",
   "status": "ongoing",
   "chapters": {
@@ -13,6 +13,31 @@
       "groups": {
         "TODO": [
           "https://files.catbox.moe/mock_1752096595285_001.jpg"
+        ]
+      }
+    },
+    "010": {
+      "title": "Rainha dos golfinhos de Rede",
+      "volume": "1",
+      "last_updated": "2025-07-09T22:04:26.646Z",
+      "groups": {
+        "Default Group": [
+          "https://files.catbox.moe/mock_1752098631313_001_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098632493_002_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098634676_003_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098637310_004_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098639331_005_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098642044_006_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098644294_007_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098645497_008_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098647058_009_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098650021_010_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098651373_011_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098653622_012_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098657574_013_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098660569_014_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098663323_015_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp",
+          "https://files.catbox.moe/mock_1752098666202_016_SemSerieDefinida_Cap_010_Rainha_dos_golfinhos_de_Rede.webp"
         ]
       }
     }
