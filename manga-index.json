@@ -18,5 +18,25 @@
         ]
       }
     }
+  },
+  "aaa": {
+    "title": "aaa",
+    "description": "aaaaaaaaaaaaaa",
+    "artist": "aa",
+    "author": "aa",
+    "cover": "",
+    "status": "ongoing",
+    "categories": [],
+    "chapters": {
+      "1-1": {
+        "number": "1",
+        "title": "aaa",
+        "volume": "1",
+        "group": "aa",
+        "pages": [
+          "https://files.catbox.moe/mock_1752096256730_001.jpg"
+        ]
+      }
+    }
   }
 }
