@@ -1,0 +1,22 @@
+{
+  "aa": {
+    "title": "aa",
+    "description": "aa",
+    "artist": "aa",
+    "author": "aa",
+    "cover": "",
+    "status": "ongoing",
+    "categories": [],
+    "chapters": {
+      "1-1": {
+        "number": "1",
+        "title": "aa",
+        "volume": "1",
+        "group": "aa",
+        "pages": [
+          "https://files.catbox.moe/mock_1752095774296_001.jpg"
+        ]
+      }
+    }
+  }
+}
