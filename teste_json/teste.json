@@ -1,26 +1,72 @@
 {
-  "title": "Crônicas do Vazio Estelar (Teste)",
-  "description": "Obra de ficção científica inexistente, criada apenas para testes de layout. A história segue o Piloto-Fantasma em sua jornada por galáxias esquecidas em busca de um artefato perdido. Este conteúdo não é real.",
-  "artist": "Artista Virtual",
-  "author": "Gerador de Conteúdo",
-  "cover": "https://files.catbox.moe/s4saiz.jpg",
-  "status": "Inexistente",
+  "title": "Suna Mahou de Suna no Oukoku wo Tsukurou ~Sabaku ni Tsuihou Sareta kara Ganbatte Sokoku Ijou no Kokka wo Tatete Mita~",
+  "description": "Rejeitado como um inútil que só conseguia manipular areia, Horus, o quinto príncipe do Império Magref, foi exilado. Abandonado no deserto escaldante, ele usou sua magia para erguer uma fortaleza colossal de areia. O que parecia ser um inferno na Terra tornou-se seu paraíso particular, e ele decidiu construir sua vida ali. No entanto, em meio a conflitos com feras mágicas, ele reúne companheiros de diversas raças e, eventualmente, funda um reino com ele mesmo como soberano.",
+  "artist": "Irooki Shinobu",
+  "author": "Ichijinsha, Sorachi Daidai",
+  "cover": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx180753-h6JdysFBEIla.jpg",
+  "status": "OnGoing",
   "chapters": {
-    "001": {
-      "title": "O Despertar do Protótipo",
-      "volume": "1",
-      "last_updated": "1748649397",
+    "07": {
+      "title": "Capítulo 07",
+      "volume": "",
+      "last_updated": "1758853713",
       "groups": {
-        "Grupo de Teste Alfa": [
-          "https://files.catbox.moe/tg5urm.jpg",
-          "https://files.catbox.moe/4o7weu.jpg",
-          "https://files.catbox.moe/rjytw8.jpg",
-          "https://files.catbox.moe/5bvfhw.jpg",
-          "https://files.catbox.moe/mzrqjy.jpg",
-          "https://files.catbox.moe/oqqlp5.jpg",
-          "https://files.catbox.moe/0p2ldg.jpg",
-          "https://files.catbox.moe/93b6fh.jpg",
-          "https://files.catbox.moe/99lzxb.jpg"
+        "gikamura": [
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDEud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDIud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDMud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDQud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDUud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDYud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDcud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDgud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMDkud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTAud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTEud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTIud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTMud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTQud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTUud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTYud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTcud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTgud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMTkud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjAud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjEud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjIud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjMud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjQud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjUud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjYud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjcud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxLzg2ZWU0ZDQxOGFhNDYwNWMyYjdmY2JiMTA4MWEyOGNjL2ltYWdlMjgud2VicA=="
+        ]
+      }
+    },
+    "06": {
+      "title": "Capítulo 06",
+      "volume": "",
+      "last_updated": "1758853708",
+      "groups": {
+        "gikamura": [
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDEud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDIud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDMud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDQud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDUud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDYud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDcud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDgud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMDkud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTAud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTEud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTIud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTMud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTQud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTUud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTYud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTcud2VicA==",
+          "https://services.f-ck.me/v1/image/aHR0cHM6Ly9jZG4ubWFuZ2FsaXZyZS5ydS9tYW5nYV82OGI3NDEwODU1N2UxL2JkMDFlNDc2YTBiZjBhZWUxZTQ1NTMyM2Q2NjZlOGM1L2ltYWdlMTgud2VicA=="
         ]
       }
     }
